@@ -1,0 +1,935 @@
+/* Variáveis de cores */
+:root {
+    --primary-color:#6e5e2d;
+    --secondary-color: #8b0000;
+    --text-color: #5C3D2E;
+    --white-color: #FFFFFF;
+    --black-color: #2F2F2F;
+}
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-weight: normal;
+}
+
+.custom-header-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 4rem;
+    font-weight: normal;
+    color: var(--white-color);
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar */
+.custom-navbar {
+    background-color: transparent !important;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: none;
+    font-family: 'Montserrat', sans-serif;
+    padding: 20px 0;
+    transition: all 0.3s ease;
+}
+
+.navbar-brand, .nav-link {
+    color: #444 !important;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.custom-navbar .navbar-nav .nav-link.active {
+    color: #8b0000 !important;
+    border-bottom-color: #8b0000;
+}
+
+.nav-link:hover {
+    color: var(--secondary-color) !important;
+}
+
+/* Menu Desktop - Links alinhados à direita */
+@media (min-width: 992px) {
+    .navbar-nav {
+        margin-left: auto; /* Empurra os links para a direita */
+    }
+    
+    .nav-item {
+        margin: 0 10px;
+    }
+}
+
+/* Estilo para o menu hamburger em telas pequenas */
+@media (max-width: 991.98px) {
+    .custom-navbar {
+        padding: 15px;
+    }
+    
+    .navbar-collapse {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(255, 255, 255, 0.98);
+        z-index: 1050;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+    }
+    
+    .navbar-collapse.show {
+        opacity: 0.9;
+        visibility: visible;
+    }
+    
+    .navbar-nav {
+        width: 100%;
+        text-align: center;
+        margin: 150px;
+        padding: 100px;
+    }
+    
+    .nav-item {
+        margin: 10px 0;
+    }
+    
+    .nav-link {
+        font-size: 1.5rem;
+        padding: 20px 20px;
+        display: inline-block;
+    }
+    
+    /* Mantém o hamburger visível */
+    .navbar-toggler {
+        position: relative;
+        z-index: 1100;
+    }
+}
+
+/* Seletor de idiomas */
+.language-selector {
+    display: flex;
+    align-items: center;
+}
+
+.language {
+    cursor: pointer;
+    margin: 0 5px;
+    width: 24px;
+    height: 16px;
+    transition: opacity 0.3s ease;
+}
+
+.language img {
+    width: 100%;
+    height: auto;
+}
+
+.language:hover {
+    opacity: 0.8;
+}
+
+.language.active {
+    border-radius: 3px;
+    opacity: 1;
+}
+
+.language:not(.active) {
+    opacity: 0.7;
+}
+
+/* Link ativo */
+.nav-link.active {
+    color: var(--secondary-color) !important;
+    border-bottom: 2px solid var(--secondary-color);
+}
+
+/* Header e Carrossel */
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Adicionado para centralização vertical */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -5%);
+    z-index: 10;
+    text-align: center;
+    width: 90%; /* Alterado para 90% para melhor responsividade */
+    max-width: 1200px; /* Largura máxima para telas muito grandes */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Estilo para "RESTAURANTE" */
+.restaurante-text {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 2rem;
+    font-weight: 300;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    color: #ffffff; /* Branco puro */
+    margin-bottom: -5px;
+    text-shadow: 
+        2px 2px 4px rgba(0, 0, 0, 0.8), /* Sombra mais forte */
+        0 0 10px rgba(0, 0, 0, 0.5); /* Efeito de glow suave */
+}
+
+/* Estilo para "Vanguarda" */
+.vanguarda-text {
+    font-family: 'Times New Roman', serif;
+    font-size: 7rem;
+    font-weight: bold;
+    color: #6e5e2d;
+    text-shadow: 
+        2px 2px 4px rgba(0, 0, 0, 0.8),
+        0 0 10px rgba(0, 0, 0, 0.5);
+    display: block;
+}
+
+/* TABLETS (768px - 992px) */
+@media (max-width: 700px) {
+    .logo-text {
+        position: absolute;
+        transform: translate(-50%, -50%);
+        padding: 15px;
+    }
+    
+    .restaurante-text {
+        font-size: 2rem;
+        letter-spacing: 1px;
+        margin-bottom: 5px;
+    }
+    
+    .vanguarda-text {
+        font-size: 7rem;
+    }
+}
+
+/* TABLETS PEQUENOS (576px - 768px) */
+@media (max-width: 768px) {
+    .logo-text {
+        position: absolute;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        padding: 10px;
+    }
+    
+    .restaurante-text {
+        font-size: 1.8rem; /* Tamanho aumentado */
+        letter-spacing: 4px; /* Espaçamento reduzido */
+        margin-bottom: 5px; /* Espaço entre textos reduzido */
+        line-height: 1;
+    }
+    
+    .vanguarda-text {
+        font-size: 5.5rem; /* Tamanho aumentado */
+        margin-top: -5px; /* Espaço reduzido acima do texto */
+        line-height: 0.9;
+    }
+}
+
+/* CELULARES (até 576px) */
+@media (max-width: 576px) {
+    .logo-text {
+        transform: translate(-50%, -50%);
+        width: 100%;
+        padding: 5px;
+    }
+    
+    .restaurante-text {
+        font-size: 2rem; /* Tamanho aumentado */
+        letter-spacing: 3px; /* Espaçamento reduzido */
+        margin-bottom: 20px; /* Espaço entre textos removido */
+        line-height: 1;
+    }
+    
+    .vanguarda-text {
+        font-size: 5rem; /* Tamanho aumentado */
+        line-height: 2rem;
+    }
+}
+
+/* AJUSTE PARA TELAS MUITO PEQUENAS */
+@media (max-width: 400px) {
+    .restaurante-text {
+        font-size: 1.2rem; /* Tamanho aumentado */
+        letter-spacing: 5px;
+        
+    }
+    
+    .vanguarda-text {
+        font-size: 4rem; /* Tamanho aumentado */
+        line-height: 2rem;
+    }
+}
+
+.custom-header {
+    padding-top: 60px; /* Espaço para o navbar fixo */
+    position: relative;
+    height: 100vh; /* Reduzi para 70% da viewport */
+    min-height: 800px; /* Altura mínima garantida */
+    max-height: 800px; /* Altura máxima para não ficar muito grande */
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.carousel-item {
+    position: relative;
+    height: 100%; /* Ocupa 100% da altura da tela */
+    width: 100%; /* Ocupa 100% da largura da tela */
+    margin: 0; /* Remove margens */
+    padding: 0; /* Remove paddings */
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Mantém proporção e cobre a área */
+    object-position: center; /* Centraliza a imagem */
+}
+
+.carousel, 
+.carousel-inner, 
+.carousel-item {
+    height: 100%; /* Garante que ocupe todo o espaço do header */
+    width: 100%;
+}
+
+.carousel-caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    padding: 50px;
+    z-index: 10;
+}
+
+.custom-header-title {
+    font-size: 4rem;
+    font-weight: bold;
+    color: var(--white-color); /* Cor branca para o texto */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8); /* Sombra para melhorar a legibilidade */
+    margin: 0; /* Remove margens do título */
+    padding: 0; /* Remove padding do título */
+}
+
+/* Correção dos indicadores */
+.carousel-indicators {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    z-index: 15;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.carousel-indicators [data-bs-target] {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 1;
+}
+
+.carousel-indicators .active {
+    background-color: #fff;
+    width: 12px;
+    height: 12px;
+}
+
+/* Ajustes para tablets e celulares (até 768px) */
+@media (max-width: 768px) {
+    .carousel {
+        overflow: hidden; /* Remove completamente a barra de rolagem */
+        position: relative;
+    }
+    
+    .carousel-inner {
+        display: block; /* Muda de flex para block - essencial para o correto funcionamento */
+        width: 100%;
+        white-space: nowrap; /* Impede quebra de linha dos itens */
+    }
+    
+    .carousel-item {
+        width: 100%;
+        display: inline-block !important; /* Importante para o alinhamento horizontal */
+        vertical-align: top;
+        transition: transform 0.6s ease; /* Adiciona transição suave */
+        margin-right: 0;
+    }
+    
+    /* Garante que apenas o slide ativo seja visível */
+    .carousel-item:not(.active) {
+        display: none !important;
+    }
+  
+/* Ajustes específicos para celulares pequenos */
+@media (max-width: 576px) {
+.carousel-indicators {
+    bottom: 15px;
+}
+    
+.carousel-indicators li {
+    width: 10px;
+    height: 10px;
+    }
+}
+    
+/* Remove qualquer margem ou padding indesejado */
+.carousel-indicators,
+.carousel-caption {
+    margin: 0;
+    padding: 0;
+}
+    
+.carousel-caption {
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    left: 0;
+}
+}
+
+/* Ajustes para mobile */
+@media (max-width: 768px) {
+    .carousel-indicators {
+        bottom: 20px;
+        gap: 10px;
+    }
+    
+    .carousel-indicators [data-bs-target] {
+        width: 8px;
+        height: 8px;
+    }
+    
+    .carousel-indicators .active {
+        width: 10px;
+        height: 10px;
+    }
+}
+    
+    .custom-header-title {
+        font-size: 2rem;
+    }
+    
+    .carousel-caption {
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+    }
+
+
+/* Ajustes para o carrossel em telas pequenas */
+@media (max-width: 768px) {
+.carousel-inner {
+        display: flex;
+        overflow-x: hidden; /* Remove isso para comportamento de slide */
+}
+    
+.carousel-item {
+        width: 100% !important; /* Força ocupar 100% da largura */
+        flex: 0 0 100% !important; /* Remove o comportamento flexível */
+        margin-right: 0 !important; /* Remove margens entre itens */
+        display: block !important; /* Garante que apenas um item seja visível */
+}
+    
+.custom-header-title {
+        font-size: 2rem;
+}
+    
+.carousel-caption {
+        top: 50%;
+        transform: translateY(-50%);
+}
+}
+/* Botões */
+.custom-btn {
+    background: #433d3b; /* Castanho escuro */
+    color: white; /* Cor do texto */
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-family: 'Montserrat', sans-serif;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+    cursor: pointer; /* Garante que o cursor mude para pointer */
+    border: none; /* Remove borda padrão do Bootstrap */
+    display: inline-block; /* Necessário para links se comportarem como botões */
+    text-decoration: none; /* Remove sublinhado dos links */
+    pointer-events: auto;
+}
+
+.custom-btn:hover {
+    background: #6A5F5A; /* Tom mais claro no hover */
+    color: white; /* Mantém a cor do texto consistente */
+}
+
+/* Seção História */
+.historia-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 0;
+    background: #fff;
+}
+
+.historia-content {
+    display: flex;
+    align-items: center; /* Centraliza verticalmente */
+    max-width: 1100px;
+    margin: auto;
+    gap: 50px;
+}
+
+/* Grade de Fotos */
+.historia-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Duas colunas */
+    grid-template-rows: repeat(2, 1fr); /* Duas linhas */
+    gap: 15px; /* Espaço entre as fotos */
+    width: 50%; /* Ocupa metade da largura */
+}
+
+.historia-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garante que as fotos cubram o espaço sem distorção */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Ajustes para o texto */
+.historia-text {
+    width: 50%; /* Ocupa metade da largura */
+    max-width: 600px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centraliza verticalmente */
+    font-family: 'Montserrat', sans-serif;
+}
+
+.historia-title {
+    font-size: 2.2rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.historia-text p {
+    font-size: 1.1rem;
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.historia-btn {
+    display: block;
+    width: fit-content;  /* Ajusta a largura do botão ao conteúdo */
+    margin: 0 auto;      /* Centraliza horizontalmente */
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    background: #333;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+    transition: background 0.3s ease;
+}
+
+.historia-btn:hover {
+    background: #555;
+}
+
+/* Responsividade para a seção "Nossa História" */
+@media (max-width: 1200px) {
+    .historia-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .historia-grid,
+    .historia-text {
+        width: 100%;
+    }
+
+    .historia-title {
+        font-size: 2rem;
+    }
+
+    .historia-text p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .historia-grid {
+        grid-template-columns: 1fr; /* Uma coluna em telas pequenas */
+        grid-template-rows: auto;
+        gap: 10px;
+    }
+
+    .historia-image img {
+        height: 200px; /* Altura fixa para as imagens em telas pequenas */
+    }
+
+    .historia-title {
+        font-size: 1.8rem;
+    }
+
+    .historia-text p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Animação de fade-in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Desliza levemente para cima */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    opacity: 0; /* Inicialmente invisível */
+    animation: fadeIn 2s ease forwards; /* Animação de 2 segundo */
+}
+
+/* Atrasos para cada elemento */
+.fade-in:nth-child(1) {
+    animation-delay: 0.6s;
+}
+
+.fade-in:nth-child(2) {
+    animation-delay: 0.8s;
+}
+
+.fade-in:nth-child(3) {
+    animation-delay: 0.10s;
+}
+
+.fade-in:nth-child(4) {
+    animation-delay: 0.12s;
+}
+
+.fade-in:nth-child(5) {
+    animation-delay: 4s;
+}
+
+.fade-in:nth-child(6) {
+    animation-delay: 4s;
+}
+
+/* Seção de Reservas */
+.reserva-section {
+    position: relative;
+    height: 100vh; /* Ocupa toda a altura da tela */
+    background: url('../img/reserva-bg.jpg') center/cover no-repeat; /* Imagem de fundo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+/* Overlay para opacidade */
+.reserva-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Fundo escuro com 50% de opacidade */
+    z-index: 1;
+}
+
+.reserva-wrapper {
+    position: relative;
+    z-index: 2; /* Garante que o conteúdo fique acima do overlay */
+    max-width: 800px;
+    padding: 20px;
+}
+
+/* Estilo do texto sobre horários e reservas */
+.reserva-info {
+    background: rgba(0, 0, 0, 0.7); /* Fundo escuro com 70% de opacidade */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.reserva-info h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.reserva-info p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Botão "Faça sua Reserva" */
+#abrir-formulario {
+    background: #433d3b;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    transition: background 0.3s ease;
+    font-size: 1rem;
+}
+
+#abrir-formulario:hover {
+    background: #6A5F5A;
+}
+
+/* Formulário de reserva (inicialmente oculto) */
+#formulario-reserva {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 500px;
+    margin-top: 20px;
+}
+
+#reserva-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#reserva-form label {
+    font-weight: bold;
+    color: #ffffff;
+}
+
+#reserva-form input,
+#reserva-form select,
+#reserva-form textarea {
+    padding: 10px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background: #3c3c3c;
+    color: white;
+    font-size: 1rem;
+}
+
+#reserva-form input:focus,
+#reserva-form select:focus,
+#reserva-form textarea:focus {
+    border-color: #6A5F5A;
+    outline: none;
+}
+
+#reserva-form button[type="submit"] {
+    background: #433d3b;
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-size: 1rem;
+}
+
+#reserva-form button[type="submit"]:hover {
+    background: #6A5F5A;
+}
+
+/* Mensagem de feedback */
+.mensagem {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: #d9534f;
+}
+
+/* Footer */
+.custom-footer {
+    background: rgba(255, 255, 255, 0.7); 
+    color: #fff;
+    padding: 2rem 1rem;
+}
+
+.custom-footer a {
+    color: #fff;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+    margin: 0 10px;
+}
+
+.custom-footer a:hover {
+    color: #DDBEA9; /* Cor suave para o hover */
+}
+
+.custom-footer i {
+    margin-right: 8px; /* Espaçamento entre o ícone e o texto */
+}
+
+/* Style dos cookies */
+.cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #2c3e50;
+    color: white;
+    padding: 15px;
+    z-index: 9999;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
+}
+
+.cookie-banner a {
+    color: #80bdff;
+    text-decoration: underline;
+}
+
+.cookie-banner .btn {
+    margin-left: 10px;
+}
+
+@media (max-width: 768px) {
+    .cookie-banner {
+        padding: 10px;
+    }
+    .cookie-banner .btn {
+        display: block;
+        width: 100%;
+        margin: 5px 0;
+    }
+}
+
+/* Estilo do mapa */
+#map {
+    width: 100%;
+    height: 300px; /* Garantir altura para o mapa */
+    background: #ccc; /* Cor de fundo para o mapa enquanto não carregado */
+    border-radius: 10px; /* Bordas arredondadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    margin-top: 20px; /* Espaço entre o conteúdo e o mapa */
+}
+
+/* Seção das redes sociais e informações */
+.social-info {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.social-info p {
+    margin: 10px 0;
+}
+
+.social-info a {
+    color: var(--white-color);
+    font-size: 1.2rem;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.social-info a:hover {
+    color: #DDBEA9; /* Cor suave para o hover */
+}
+
+.social-info i {
+    margin-right: 8px; /* Espaçamento entre o ícone e o texto */
+}
+
+/* Responsividade */
+@media (max-width: 1200px) {
+    .historia-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .historia-grid,
+    .historia-text {
+        width: 100%;
+    }
+
+    .historia-title {
+        font-size: 2rem;
+    }
+
+    .historia-text p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .custom-header-title {
+        font-size: 3rem;
+    }
+
+    .carousel-caption {
+        top: 60%;
+    }
+
+    .historia-section {
+        padding: 40px 0;
+    }
+
+    .historia-content {
+        padding: 0 20px;
+    }
+
+    .historia-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
+    .historia-image img {
+        height: 200px;
+    }
+
+    .reserva-info h2 {
+        font-size: 2rem;
+    }
+}
+
+/*Estilos para as paginas dos links*/

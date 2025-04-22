@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurante Vanguarda</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+</head>
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg custom-navbar fixed-top">
+    <div class="container">
+        <!--<a class="navbar-brand" href="#">
+            <img src="img/logo_transparente.png" alt="Restaurante Vanguarda" style="height: 100px;">
+        </a>-->
+        <div class="language-selector me-3">
+            <span id="pt" class="language active" onclick="changeLanguage('pt')">
+                <img src="img/bandeira_pt.gif" alt="PT">
+            </span>
+            <span id="en" class="language" onclick="changeLanguage('en')">
+                <img src="img/bandeira_en.jpg" alt="EN">
+            </span>
+        </div>
+        <!-- Botão Hamburger (visível apenas em telas pequenas) -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <!-- Menu (alinhado à direita) -->
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a id="nav-home" class="nav-link" href="index.html">Início</a></li>
+                <li class="nav-item"><a id="nav-especialidades" class="nav-link" href="especialidades.html">Especialidades</a></li>
+                <li class="nav-item"><a id="nav-menu" class="nav-link" href="menu.html">Menu</a></li>
+                <li class="nav-item"><a id="nav-menu-grupos" class="nav-link" href="menuparagrupos.html">Menu para Grupos</a></li>
+                <li class="nav-item"><a id="nav-reservas" class="nav-link" href="reservas.html">Reservas</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Header com Carrossel -->
+<header id="home" class="d-flex align-items-center custom-header text-white">
+    <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
+        <!-- Indicadores -->
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active" aria-current="true"></button>
+            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2"></button>
+            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="3"></button>
+            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="4"></button>
+            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="5"></button>
+        </div>
+        
+        <!-- Itens do carrossel -->
+        <div class="carousel-inner h-100">
+            <div class="carousel-item active h-100">
+                <img src="img/capa1.jpg" class="d-block w-100" alt="Prato 1">
+                <div class="carousel-caption text-center">
+                    <div class="logo-text">
+                        <span class="restaurante-text">RESTAURANTE</span>
+                        <span class="vanguarda-text">Vanguarda</span>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="img/capa2.jpg" class="d-block w-100" alt="Prato 2">
+                <div class="carousel-caption text-center">
+                    <div class="logo-text">
+                        <span class="restaurante-text">RESTAURANTE</span>
+                        <span class="vanguarda-text">Vanguarda</span>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="img/capa3.jpg" class="d-block w-100" alt="Prato 3">
+                <div class="carousel-caption text-center">
+                    <div class="logo-text">
+                        <span class="restaurante-text">RESTAURANTE</span>
+                        <span class="vanguarda-text">Vanguarda</span>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item active h-100">
+                <img src="img/capa4.jpg" class="d-block w-100" alt="Prato 4">
+                <div class="carousel-caption text-center">
+                    <div class="logo-text">
+                        <span class="restaurante-text">RESTAURANTE</span>
+                        <span class="vanguarda-text">Vanguarda</span>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item active h-100">
+                <img src="img/capa5.jpg" class="d-block w-100" alt="Prato 5">
+                <div class="carousel-caption text-center">
+                    <div class="logo-text">
+                        <span class="restaurante-text">RESTAURANTE</span>
+                        <span class="vanguarda-text">Vanguarda</span>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item active h-100">
+                <img src="img/capa6.jpg" class="d-block w-100" alt="Prato 6">
+                <div class="carousel-caption text-center">
+                    <div class="logo-text">
+                        <span class="restaurante-text">RESTAURANTE</span>
+                        <span class="vanguarda-text">Vanguarda</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Seção de História -->
+<section id="historia" class="historia-section">
+    <div class="container">
+        <div class="historia-content">
+            <!-- Grade de Fotos -->
+            <div class="historia-grid">
+                <div class="historia-image fade-in">
+                    <img src="img/historia1.jpg" alt="História 1">
+                </div>
+                <div class="historia-image fade-in">
+                    <img src="img/historia2.jpg" alt="História 2">
+                </div>
+                <div class="historia-image fade-in">
+                    <img src="img/historia3.jpg" alt="História 3">
+                </div>
+                <div class="historia-image fade-in">
+                    <img src="img/historia4.jpg" alt="História 4">
+                </div>
+            </div>
+
+            <!-- Texto ao lado das fotos -->
+            <div class="historia-text">
+                <h2 id="historia-titulo" class="historia-title fade-in">Uma Jornada de Sabores e Tradição.</h2>
+                <p id="historia-texto1" class="fade-in">
+                    Fundado em 1995 pelo renomado chef Eduardo Mendes, o Restaurante Vanguarda nasceu da paixão por unir tradição e inovação. Localizado no coração de Porto, o restaurante rapidamente se tornou um marco na cena gastronômica portuguesa, celebrando a rica herança culinária do país enquanto abraçava técnicas modernas e ingredientes de alta qualidade.
+                </p>
+                <p id="historia-texto2" class="fade-in">
+                    O nome "Vanguarda" reflete nossa missão de estar sempre à frente, explorando novos horizontes sem perder de vista nossas raízes. Cada prato é uma homenagem à cultura portuguesa, com toques contemporâneos que surpreendem e encantam. Nossa equipe, liderada pelo chef Mendes, dedica-se a criar experiências memoráveis, onde cada detalhe é cuidadosamente planejado para proporcionar uma jornada única de sabores.
+                </p>
+                <p id="historia-texto3" class="fade-in">
+                    Ao longo dos anos, o Restaurante Vanguarda recebeu inúmeros prêmios e reconhecimentos, mas nosso maior orgulho é o sorriso de satisfação de nossos clientes. Venha nos visitar e faça parte dessa história que continua a ser escrita a cada dia, com paixão, dedicação e muito sabor.
+                </p>
+                <a href="reservas.html" id="historia-btn" class="btn historia-btn fade-in">Faça Parte da Nossa História</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Seção de Reservas -->
+<section id="reservas" class="reserva-section">
+    <div class="reserva-overlay"></div> <!-- Overlay para opacidade -->
+    <div class="reserva-wrapper">
+        <!-- Texto sobre horários e reservas -->
+        <div class="reserva-info">
+            <h2 id="reserva-titulo">Reserve Online</h2>
+            <p>
+                Aberto todos os dias ao jantar,<br>
+                das 18h ás 22h.
+            </p>
+            <a href="reservas.html" class="custom-btn">Reservar</a>
+        </div>
+    </div>
+</section>
+
+<!-- Footer-->
+<footer id="contato" class="bg-dark text-white py-4 custom-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mb-4 mb-md-0">
+                <h5>Contato</h5>
+                <address>
+                    <p><i class="fas fa-map-marker-alt me-2"></i> Rua da Alegria, 123 - Porto, Portugal</p>
+                    <p><i class="fas fa-phone me-2"></i> 999 999 999</p>
+                    <p><i class="fas fa-envelope me-2"></i> contacto@vanguarda.com</p>
+                </address>
+            </div>
+            
+            <div class="col-md-4 mb-4 mb-md-0">
+                <div id="map" style="height: 200px;"></div>
+            </div>
+            
+            <div class="col-md-4">
+                <h5>Informações Legais</h5>
+                <ul class="list-unstyled">
+                    <li><a href="politica-privacidade.html" class="text-white"><i class="fas fa-user-shield me-2"></i> Política de Privacidade</a></li>
+                    <li><a href="aviso-legal.html" class="text-white"><i class="fas fa-balance-scale me-2"></i> Aviso Legal</a></li>
+                    <li><a href="politica-cookies.html" class="text-white"><i class="fas fa-cookie me-2"></i> Política de Cookies</a></li>
+                    <li><a href="termos-servico.html" class="text-white"><i class="fas fa-file-contract me-2"></i> Termos de Serviço</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="row mt-4">
+            <div class="col-12 text-center">
+                <div class="social-icons mb-3">
+                    <a href="https://www.instagram.com/accounts/login/" class="text-white mx-2" aria-label="Instagram"><i class="fab fa-instagram fa-lg"></i></a>
+                    <a href="https://www.facebook.com/login.php" class="text-white mx-2" aria-label="Facebook"><i class="fab fa-facebook fa-lg"></i></a>
+                    <a href="https://wa.me/11234567890" class="text-white mx-2" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp fa-lg"></i></a>
+                </div>
+                <p class="small mb-0">
+                    © <span id="current-year"></span> Restaurante Vanguarda. Todos os direitos reservados.
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Banner de Cookies -->
+<div id="cookieConsent" class="cookie-banner d-none">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-8 mb-3 mb-md-0">
+                <p class="mb-0">Utilizamos cookies para melhorar sua experiência. Ao continuar navegando, você concorda com nossa <a href="politica-cookies.html" class="text-light">Política de Cookies</a>.</p>
+            </div>
+            <div class="col-md-4 text-md-end">
+                <button id="acceptCookies" class="btn btn-sm btn-primary">Aceitar</button>
+                <button id="rejectCookies" class="btn btn-sm btn-outline-light">Recusar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="js/lang.js"></script>
+<script src="js/script.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script>
+    // Mapa (existente)
+    const map = L.map('map').setView([41.1579, -8.6291], 15);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map);
+    L.marker([41.1579, -8.6291]).addTo(map)
+        .bindPopup('Rua da Alegria, 123, Porto, Portugal')
+        .openPopup();
+
+    // Atualiza o ano no footer
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    // Gerenciamento de Cookies
+    document.addEventListener('DOMContentLoaded', function() {
+        const cookieBanner = document.getElementById('cookieConsent');
+        const acceptBtn = document.getElementById('acceptCookies');
+        const rejectBtn = document.getElementById('rejectCookies');
+        
+        if (!localStorage.getItem('cookieConsent')) {
+            cookieBanner.classList.remove('d-none');
+        }
+        
+        acceptBtn.addEventListener('click', function() {
+            localStorage.setItem('cookieConsent', 'accepted');
+            cookieBanner.classList.add('d-none');
+            loadAnalytics(); // Carrega scripts que usam cookies
+        });
+        
+        rejectBtn.addEventListener('click', function() {
+            localStorage.setItem('cookieConsent', 'rejected');
+            cookieBanner.classList.add('d-none');
+        });
+    });
+    
+    function loadAnalytics() {
+        // Exemplo: Google Analytics (substitua pelo seu ID)
+        if (localStorage.getItem('cookieConsent') === 'accepted') {
+            const script = document.createElement('script');
+            script.src = 'https://www.googletagmanager.com/gtag/js?id=UA-XXXXX-Y';
+            script.async = true;
+            document.head.appendChild(script);
+            
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-XXXXX-Y');
+        }
+    }
+</script>
+</body>
+</html>

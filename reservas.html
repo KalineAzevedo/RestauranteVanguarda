@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurante Vanguarda - Reservas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="css/style-novaspaginas.css">
+</head>
+<body>
+<div class="nova-pagina">
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg custom-navbar fixed-top">
+    <div class="container">
+        <div class="language-selector me-3">
+            <span id="pt" class="language active" onclick="changeLanguage('pt')">
+                <img src="img/bandeira_pt.gif" alt="PT">
+            </span>
+            <span id="en" class="language" onclick="changeLanguage('en')">
+                <img src="img/bandeira_en.jpg" alt="EN">
+            </span>
+        </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a id="nav-home" class="nav-link" href="index.html">Início</a></li>
+                <li class="nav-item"><a id="nav-especialidades" class="nav-link" href="especialidades.html">Especialidades</a></li>
+                <li class="nav-item"><a id="nav-menu" class="nav-link" href="menu.html">Menu</a></li>
+                <li class="nav-item"><a id="nav-menu-grupos" class="nav-link" href="menuparagrupos.html">Menu para Grupos</a></li>
+                <li class="nav-item"><a id="nav-reservas" class="nav-link active" href="reservas.html">Reservas</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<header class="d-flex align-items-center reservas-header text-white">
+    <div class="container text-center">
+        <h1 id="reservas-titulo">RESERVAS</h1>
+        <p class="lead" id="reservas-subtitulo">Garanta seu momento especial conosco.</p>
+    </div>
+</header>
+
+<section class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-6">
+            <div class="reserva-card p-4">
+                <h2 id="form-titulo" class="text-center mb-4">Faça sua Reserva</h2>
+                
+                <form id="formulario-reserva-simples">
+                    <!-- Data -->
+                    <div class="form-group mb-4">
+                        <label id="label-data" for="data-reserva">Escolha uma Data:</label>
+                        <input type="date" id="data-reserva" class="form-control" min="" required>
+                    </div>
+                    
+                    <!-- Horário -->
+                    <div class="form-group mb-4">
+                        <label id="label-horario" for="horario-reserva">Horário:</label>
+                        <select id="horario-reserva" class="form-control">
+                            <option value="" disabled selected id="placeholder-horario">Selecione um horário</option>
+                            <option value="18:00">18:00</option>
+                            <option value="19:00">19:00</option>
+                            <option value="20:00">20:00</option>
+                            <option value="21:00">21:00</option>
+                            <option value="22:00">22:00</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Número de Pessoas -->
+                    <div class="form-group mb-4">
+                        <label id="label-pessoas" for="pessoas-reserva">Número de Pessoas:</label>
+                        <select id="pessoas-reserva" class="form-control">
+                            <option value="1"selected>1 pessoa</option>
+                            <option value="2">2 pessoas</option>
+                            <option value="3">3 pessoas</option>
+                            <option value="4">4 pessoas</option>
+                            <option value="5">5 pessoas</option>
+                            <option value="6">6 pessoas</option>
+                            <option value="7">7 pessoas</option>
+                            <option value="8">8 pessoas</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Contato -->
+                    <div class="form-group mb-4">
+                        <label id="label-contato" for="contato-reserva">Contato:</label>
+                        <input type="text" id="contato-reserva" class="form-control" placeholder="Seu telefone ou e-mail" required>
+                    </div>
+                    
+                    <!-- Observações -->
+                    <div class="form-group mb-4">
+                        <label id="label-observacoes" for="observacoes-reserva">Observações:</label>
+                        <textarea id="observacoes-reserva" class="form-control" rows="3" placeholder="Restrições alimentares, salivacários etc."></textarea>
+                    </div>
+                    
+                    <button type="submit" id="btn-reservar" class="btn-reservar">Reservar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer-->
+<footer id="contato" class="bg-dark text-white py-4 custom-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mb-4 mb-md-0">
+                <h5>Contato</h5>
+                <address>
+                    <p><i class="fas fa-map-marker-alt me-2"></i> Rua da Alegria, 123 - Porto, Portugal</p>
+                    <p><i class="fas fa-phone me-2"></i> 999 999 999</p>
+                    <p><i class="fas fa-envelope me-2"></i> contacto@vanguarda.com</p>
+                </address>
+            </div>
+
+            <div class="col-md-4">
+                <h5>Informações Legais</h5>
+                <ul class="list-unstyled">
+                    <li><a href="politica-privacidade.html" class="text-white"><i class="fas fa-user-shield me-2"></i> Política de Privacidade</a></li>
+                    <li><a href="aviso-legal.html" class="text-white"><i class="fas fa-balance-scale me-2"></i> Aviso Legal</a></li>
+                    <li><a href="politica-cookies.html" class="text-white"><i class="fas fa-cookie me-2"></i> Política de Cookies</a></li>
+                    <li><a href="termos-servico.html" class="text-white"><i class="fas fa-file-contract me-2"></i> Termos de Serviço</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="row mt-4">
+            <div class="col-12 text-center">
+                <div class="social-icons mb-3">
+                    <a href="#" class="text-white mx-2" aria-label="Instagram"><i class="fab fa-instagram fa-lg"></i></a>
+                    <a href="#" class="text-white mx-2" aria-label="Facebook"><i class="fab fa-facebook fa-lg"></i></a>
+                    <a href="https://wa.me/11234567890" class="text-white mx-2" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp fa-lg"></i></a>
+                </div>
+                <p class="small mb-0">
+                    © <span id="current-year"></span> Restaurante Vanguarda. Todos os direitos reservados.
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Banner de Cookies -->
+<div id="cookieConsent" class="cookie-banner d-none">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-8 mb-3 mb-md-0">
+                <p class="mb-0">Utilizamos cookies para melhorar sua experiência. Ao continuar navegando, você concorda com nossa <a href="politica-cookies.html" class="text-light">Política de Cookies</a>.</p>
+            </div>
+            <div class="col-md-4 text-md-end">
+                <button id="acceptCookies" class="btn btn-sm btn-primary">Aceitar</button>
+                <button id="rejectCookies" class="btn btn-sm btn-outline-light">Recusar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+<!-- Scripts -->
+<script src="js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!--Script para o JSEmail-->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+    // Inicializa o EmailJS com sua chave pública
+    emailjs.init("cS_tnL5sB4USBKOqM");
+</script>
+<script>
+    // Substitua pela sua chave pública CORRETA
+    emailjs.init('cS_tnL5sB4USBKOqM', {
+        // Adicione isso para evitar conflitos com Gmail API
+        blockHeadless: true,
+        blockList: {
+            // Desabilita Gmail API se não estiver usando
+            'gmail': true
+        }
+    });
+</script>
+
+<script>
+// Definição das traduções atualizadas para o novo formulário
+const translations = {
+    pt: {
+        // Navegação
+        "nav-home": "Início",
+        "nav-especialidades": "Especialidades",
+        "nav-menu": "Menu",
+        "nav-menu-grupos": "Menu para Grupos",
+        "nav-reservas": "Reservas",
+        
+        // Cabeçalho
+        "reservas-titulo": "RESERVAS",
+        "reservas-subtitulo": "Garanta seu momento especial conosco",
+        
+        // Formulário
+        "form-titulo": "Faça sua Reserva",
+        "label-data": "Escolha uma Data:",
+        "data-reserva": "dd/mm/aaaa",
+        "label-horario": "Horário:",
+        "placeholder-horario": "Selecione um horário",
+        "label-pessoas": "Número de Pessoas:",
+        "label-contato": "Contato:",
+        "contato-reserva": "Seu telefone ou e-mail",
+        "label-observacoes": "Observações:",
+        "observacoes-reserva": "Restrições alimentares, salivacários etc.",
+        "btn-reservar": "Reservar","campos-obrigatorios": "Por favor, preencha todos os campos obrigatórios!",
+        "reserva-confirmada": "Reserva confirmada para {data} às {horario} para {pessoas} pessoas. Você receberá uma confirmação por e-mail.",
+        "erro-configuracao": "Reserva salva localmente (configuração de email incompleta)",
+        "erro-envio": "Reserva salva localmente, mas ocorreu um erro ao enviar. Por favor, tente novamente mais tarde.",
+        
+        // Rodapé
+        "footer-endereco": "Endereço: Rua da Alegria, 123 - Porto, Portugal",
+        "footer-contato": "Contacto: 999 999 999",
+    },
+    en: {
+        // Navigation
+        "nav-home": "Home",
+        "nav-especialidades": "Specialties",
+        "nav-menu": "Menu",
+        "nav-menu-grupos": "Group Menu",
+        "nav-reservas": "Reservations",
+        
+        // Header
+        "reservas-titulo": "RESERVATIONS",
+        "reservas-subtitulo": "Book your special moment with us",
+        
+        // Form
+        "form-titulo": "Make Your Reservation",
+        "label-data": "Choose a Date:",
+        "data-reserva": "mm/dd/yyyy",
+        "label-horario": "Time:",
+        "placeholder-horario": "Select a time",
+        "label-pessoas": "Number of People:",
+        "label-contato": "Contact:",
+        "contato-reserva": "Your phone or email",
+        "label-observacoes": "Observations:",
+        "observacoes-reserva": "Dietary restrictions, special requests etc.",
+        "btn-reservar": "Book Now","campos-obrigatorios": "Please fill in all required fields!",
+        "reserva-confirmada": "Reservation confirmed for {data} at {horario} for {pessoas} people. You will receive a confirmation email.",
+        "erro-configuracao": "Reservation saved locally (email configuration incomplete)",
+        "erro-envio": "Reservation saved locally, but there was an error sending. Please try again later.",
+        
+       // Footer
+       "footer-endereco": "Address: Rua da Alegria, 123 - Porto, Portugal",
+        "footer-contato": "Contact: 999 999 999",
+    }
+};
+
+// Função para carregar o idioma salvo
+function loadLanguage() {
+    const savedLanguage = localStorage.getItem("language") || "pt";
+    changeLanguage(savedLanguage);
+}
+
+// Função principal para mudar o idioma
+function changeLanguage(lang) {
+    // Salva o idioma selecionado
+    localStorage.setItem("language", lang);
+    
+    // Atualiza a classe ativa nos seletores de idioma
+    document.querySelectorAll('.language').forEach(el => {
+        el.classList.remove('active');
+    });
+    
+    const activeLangElement = document.getElementById(lang);
+    if (activeLangElement) {
+        activeLangElement.classList.add('active');
+    }
+
+    // Verifica se existem traduções para o idioma selecionado
+    if (!translations[lang]) return;
+
+    // Atualiza todos os elementos com IDs correspondentes
+    Object.keys(translations[lang]).forEach(key => {
+        const elements = document.querySelectorAll(`[id="${key}"]`);
+        elements.forEach(element => {
+            if (element) {
+                if (element.tagName === "INPUT" || element.tagName === "TEXTAREA" || element.tagName === "SELECT") {
+                    element.placeholder = translations[lang][key];
+                } else if (element.tagName === "OPTION" && element.value === "") {
+                    element.textContent = translations[lang][key];
+                } else {
+                    element.textContent = translations[lang][key];
+                }
+            }
+        });
+    });
+}
+
+// Inicialização quando o DOM estiver carregado
+document.addEventListener("DOMContentLoaded", function() {
+    loadLanguage();
+    
+    // Adiciona eventos de clique aos seletores de idioma
+    const ptFlag = document.getElementById('pt');
+    const enFlag = document.getElementById('en');
+    
+    if (ptFlag) ptFlag.addEventListener('click', () => changeLanguage('pt'));
+    if (enFlag) enFlag.addEventListener('click', () => changeLanguage('en'));
+    
+});
+
+// Para garantir que o idioma seja aplicado mesmo se o DOM já estiver carregado
+if (document.readyState === 'complete' || document.readyState === 'interactive') {
+    loadLanguage();
+}
+</script>
+</body>
+</html>
