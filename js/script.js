@@ -1,16 +1,30 @@
+/**
+ * GERENCIADOR PRINCIPAL DA APLICAÇÃO
+ * 
+ * Este script controla:
+ * - Sistema de carrossel
+ * - Troca de idiomas
+ * - Reservas online
+ * - Gerenciamento de cookies */
+
 document.addEventListener('DOMContentLoaded', function() {
-    // 1. Configuração do Carousel
-    initCarousel();
+    initCarousel();       // Inicializa o carrossel de imagens
+    setMinDate();         // Configura data mínima para reservas
+    initReservations();   // Configura sistema de reservas
+    initLanguage();       // Configura sistema de idiomas
+    initCookies();        // Configura gerenciamento de cookies
     
-    // 2. Menu Mobile (descomente se necessário)
-    // initMobileMenu();
-    
-    // 3. Configurações de Reserva
-    setMinDate();
-    initReservations();
+    // Atualiza o ano no footer
+    document.getElementById('current-year').textContent = new Date().getFullYear();
 });
 
-// Carousel com transição ajustada
+// ==================== CARROSSEL ====================
+/**
+ * Inicializa e configura o carrossel Bootstrap
+ * - Define intervalo de transição automática
+ * - Ajusta velocidade da transição
+ * - Configura indicadores de navegação
+ */
 function initCarousel() {
     const carousel = document.getElementById('mainCarousel');
     if (!carousel) return;
@@ -22,16 +36,12 @@ function initCarousel() {
         wrap: true
     });
 
-    // Configura a velocidade da transição
+    // Ajusta velocidade da transição
     const style = document.createElement('style');
-    style.innerHTML = `
-        .carousel-item {
-            transition: transform 0.6s ease-in-out; 
-        }
-    `;
+    style.innerHTML = `.carousel-item { transition: transform 0.6s ease-in-out; }`;
     document.head.appendChild(style);
 
-    // Atualiza indicadores quando o slide muda
+    // Atualiza indicadores ativos
     carousel.addEventListener('slid.bs.carousel', function(event) {
         const activeIndex = event.to;
         document.querySelectorAll('.carousel-indicators [data-bs-slide-to]').forEach((indicator, index) => {
@@ -39,60 +49,42 @@ function initCarousel() {
         });
     });
 
-    // Navegação pelos indicadores (bolinhas)
+    // Configura navegação pelos indicadores
     document.querySelectorAll('.carousel-indicators [data-bs-slide-to]').forEach((indicator, index) => {
-        indicator.addEventListener('click', () => {
-            myCarousel.to(index);
-        });
+        indicator.addEventListener('click', () => myCarousel.to(index));
     });
 }
 
-// Função de menu mobile (descomente se necessário)
-/*
-function initMobileMenu() {
-    const navbarCollapse = document.querySelector('.navbar-collapse');
-    if (!navbarCollapse) return;
+// ==================== RESERVAS ====================
+/**
+ * Sistema de reservas
+ * - Valida formulário
+ * - Salva dados localmente
+ * - Integra com EmailJS para envio
+ */
 
-    document.querySelectorAll('.nav-link').forEach(link => {
-        link.addEventListener('click', () => {
-            if (window.innerWidth < 992) {
-                navbarCollapse.classList.remove('show');
-            }
-        });
-    });
-
-    const closeBtn = document.createElement('button');
-    closeBtn.className = 'close-btn';
-    closeBtn.innerHTML = '&times;';
-    closeBtn.addEventListener('click', () => navbarCollapse.classList.remove('show'));
-    navbarCollapse.appendChild(closeBtn);
-}
-*/
-
-// Funções de reserva
 function setMinDate() {
     const dataInput = document.getElementById('data-reserva');
-    if (dataInput) {
-        const today = new Date();
-        today.setDate(today.getDate() + 1); // Reservas a partir de amanhã
-        const minDate = today.toISOString().split('T')[0];
-        dataInput.min = minDate;
-        dataInput.value = minDate;
-    }
+    if (!dataInput) return;
+    
+    const tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    dataInput.min = tomorrow.toISOString().split('T')[0];
+    dataInput.value = dataInput.min;
 }
 
 function initReservations() {
-    const formReserva = document.getElementById('formulario-reserva-simples');
-    if (!formReserva) return;
-
+    const form = document.getElementById('formulario-reserva-simples');
+    if (!form) return;
+    
     loadSavedReservation();
-    formReserva.addEventListener('submit', handleReservationSubmit);
+    form.addEventListener('submit', handleReservationSubmit);
 }
 
 function loadSavedReservation() {
     try {
-        const dadosSalvos = JSON.parse(localStorage.getItem('reserva')) || {};
-        const fields = {
+        const savedData = JSON.parse(localStorage.getItem('reserva')) || {};
+        const fieldMap = {
             'data-reserva': 'data',
             'horario-reserva': 'horario',
             'pessoas-reserva': 'pessoas',
@@ -100,10 +92,10 @@ function loadSavedReservation() {
             'observacoes-reserva': 'observacoes'
         };
 
-        Object.keys(fields).forEach(id => {
+        Object.entries(fieldMap).forEach(([id, key]) => {
             const element = document.getElementById(id);
             if (element && id !== 'data-reserva') {
-                element.value = dadosSalvos[fields[id]] || '';
+                element.value = savedData[key] || '';
             }
         });
     } catch (error) {
@@ -114,94 +106,114 @@ function loadSavedReservation() {
 function handleReservationSubmit(event) {
     event.preventDefault();
     
-    const data = document.getElementById('data-reserva').value;
-    const horario = document.getElementById('horario-reserva').value;
-    const pessoas = document.getElementById('pessoas-reserva').value;
-    const contato = document.getElementById('contato-reserva').value.trim();
-    const observacoes = document.getElementById('observacoes-reserva').value;
+    const formData = {
+        data: document.getElementById('data-reserva').value,
+        horario: document.getElementById('horario-reserva').value,
+        pessoas: document.getElementById('pessoas-reserva').value,
+        contato: document.getElementById('contato-reserva').value.trim(),
+        observacoes: document.getElementById('observacoes-reserva').value
+    };
     
-    // Limpar mensagens anteriores
-    const oldMessage = document.querySelector('.alert');
-    if (oldMessage) oldMessage.remove();
-    
-    const mensagem = document.createElement('div');
-    mensagem.className = 'alert mt-3';
-    event.target.appendChild(mensagem);
-
     // Validação
-    if (!data || !horario || !pessoas || !contato) {
-        showError(mensagem, 'campos-obrigatorios');
+    if (!Object.values(formData).every(Boolean)) {
+        showError('Preencha todos os campos obrigatórios');
         return;
     }
 
-    if (!isValidContact(contato)) {
-        showError(mensagem, 'contato-invalido');
+    if (!isValidContact(formData.contato)) {
+        showError('Formato de contato inválido');
         return;
     }
 
-    saveReservation(data, horario, pessoas, contato, observacoes);
-    sendReservationEmail(data, horario, pessoas, contato, observacoes, mensagem);
+    saveReservation(formData);
+    sendReservation(formData);
 }
 
-function saveReservation(data, horario, pessoas, contato, observacoes) {
-    localStorage.setItem('reserva', JSON.stringify({ 
-        data, 
-        horario, 
-        pessoas, 
-        contato, 
-        observacoes 
-    }));
+function saveReservation(data) {
+    localStorage.setItem('reserva', JSON.stringify(data));
 }
 
-function sendReservationEmail(data, horario, pessoas, contato, observacoes, mensagem) {
-    // Verificar consentimento antes de processar dados pessoais
-    if (!hasMarketingConsent()) {
-        showError(mensagem, 'consentimento-necessario');
-        return Promise.resolve(); // Retorna uma promise vazia para evitar erros
+function sendReservation(data) {
+    if (!hasConsent()) {
+        showError('É necessário aceitar os termos de uso');
+        return;
     }
 
-    const serviceID = 'service_yyjfkzr';
-    const templateID = 'template_0wcvrsf';
-    const userID = 'cS_tnL5sB4USBKOqM';
-    
-    console.log('Enviando email com:', {
-        serviceID,
-        templateID,
-        data: {
-            data_reserva: formatDate(data),
-            horario_reserva: horario,
-            numero_pessoas: pessoas,
-            contato_cliente: contato,
-            observacoes: observacoes || 'Nenhuma observação'
+    const emailData = {
+        serviceID: 'service_yyjfkzr',
+        templateID: 'template_0wcvrsf',
+        userID: 'cS_tnL5sB4USBKOqM',
+        templateParams: {
+            data_reserva: formatDate(data.data),
+            horario_reserva: data.horario,
+            numero_pessoas: data.pessoas,
+            contato_cliente: data.contato,
+            observacoes: data.observacoes || 'Nenhuma observação'
         }
-    });
+    };
 
-    return emailjs.send(serviceID, templateID, {
-        data_reserva: formatDate(data),
-        horario_reserva: horario,
-        numero_pessoas: pessoas,
-        contato_cliente: contato,
-        observacoes: observacoes || 'Nenhuma observação'
-    }, userID)
-    .then((response) => {
-        console.log('Sucesso:', response);
-        showSuccess(mensagem, data, horario, pessoas);
-        document.getElementById('formulario-reserva-simples').reset();
-        setMinDate();
-        return response;
-    })
-    .catch((error) => {
-        console.error('Erro:', error);
-        showError(mensagem, 'erro-envio', error.text);
-        throw error; // Propaga o erro para quem chamou a função
-    });
+    emailjs.send(emailData.serviceID, emailData.templateID, emailData.templateParams, emailData.userID)
+        .then(() => {
+            showSuccess('Reserva enviada com sucesso!');
+            document.getElementById('formulario-reserva-simples').reset();
+            setMinDate();
+        })
+        .catch(error => {
+            console.error('Erro ao enviar reserva:', error);
+            showError('Erro ao enviar reserva. Tente novamente.');
+        });
 }
 
-// Adicione estas funções auxiliares para gerenciar consentimento
-function hasMarketingConsent() {
-    // Verifica tanto localStorage quanto cookies para maior robustez
-    const consent = localStorage.getItem('cookieConsent') || getCookie('cookieConsent');
-    return consent === 'accepted'; // Retorna true apenas se consentimento explícito
+// ==================== COOKIES ====================
+/**
+ * Sistema de consentimento de cookies
+ * - Exibe banner quando necessário
+ * - Gerencia preferências do usuário
+ * - Carrega scripts de analytics quando permitido
+ */
+
+function initCookies() {
+    const banner = document.getElementById('cookieConsent');
+    if (!banner) return;
+    
+    if (!localStorage.getItem('cookieConsent')) {
+        banner.classList.remove('d-none');
+    }
+    
+    document.getElementById('acceptCookies')?.addEventListener('click', acceptCookies);
+    document.getElementById('rejectCookies')?.addEventListener('click', rejectCookies);
+}
+
+function acceptCookies() {
+    localStorage.setItem('cookieConsent', 'accepted');
+    document.getElementById('cookieConsent').classList.add('d-none');
+    loadAnalytics();
+}
+
+function rejectCookies() {
+    localStorage.setItem('cookieConsent', 'rejected');
+    document.getElementById('cookieConsent').classList.add('d-none');
+}
+
+function loadAnalytics() {
+    if (localStorage.getItem('cookieConsent') !== 'accepted') return;
+    
+    // Implementação do Google Analytics (substitua pelo seu ID)
+    const script = document.createElement('script');
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=UA-XXXXX-Y';
+    script.async = true;
+    document.head.appendChild(script);
+    
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function(){ dataLayer.push(arguments); };
+    gtag('js', new Date());
+    gtag('config', 'UA-XXXXX-Y');
+}
+
+// ==================== FUNÇÕES AUXILIARES ====================
+
+function hasConsent() {
+    return localStorage.getItem('cookieConsent') === 'accepted';
 }
 
 function getCookie(name) {
@@ -211,4 +223,24 @@ function getCookie(name) {
         if (cookieName === name) return decodeURIComponent(cookieValue);
     }
     return null;
+}
+
+function showError(message) {
+    // Implemente sua lógica de exibição de erros
+    console.error(message);
+}
+
+function showSuccess(message) {
+    // Implemente sua lógica de exibição de sucesso
+    console.log(message);
+}
+
+function isValidContact(contact) {
+    // Implemente sua validação de contato
+    return contact.length > 0;
+}
+
+function formatDate(dateString) {
+    // Implemente sua formatação de data
+    return dateString;
 }

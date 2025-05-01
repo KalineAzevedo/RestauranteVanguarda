@@ -11,7 +11,7 @@
 </head>
 <body>
 <div class="nova-pagina">
-<!-- Navbar -->
+<!-- Barra de navegação principal -->
 <nav class="navbar navbar-expand-lg custom-navbar fixed-top">
     <div class="container">
         <div class="language-selector me-3">
@@ -22,10 +22,11 @@
                 <img src="img/bandeira_en.jpg" alt="EN">
             </span>
         </div>
+        <!-- Botão para menu mobile -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        
+        <!-- Links -->
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item"><a id="nav-home" class="nav-link" href="index.html">Início</a></li>
@@ -44,7 +45,7 @@
         <p class="lead" id="reservas-subtitulo">Garanta seu momento especial conosco.</p>
     </div>
 </header>
-
+<!--Seção com imagem e texto-->
 <section class="container py-5">
     <div class="row justify-content-center">
         <div class="col-lg-6">
@@ -86,10 +87,10 @@
                         </select>
                     </div>
                     
-                    <!-- Contato -->
+                    <!-- Contatos -->
                     <div class="form-group mb-4">
                         <label id="label-contato" for="contato-reserva">Contato:</label>
-                        <input type="text" id="contato-reserva" class="form-control" placeholder="Seu telefone ou e-mail" required>
+                        <input type="text" id="contato-reserva" class="form-control" placeholder="Seu e-mail" required>
                     </div>
                     
                     <!-- Observações -->
@@ -110,7 +111,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4 mb-4 mb-md-0">
-                <h5>Contato</h5>
+                <h5>Contatos</h5>
                 <address>
                     <p><i class="fas fa-map-marker-alt me-2"></i> Rua da Alegria, 123 - Porto, Portugal</p>
                     <p><i class="fas fa-phone me-2"></i> 999 999 999</p>
@@ -161,11 +162,13 @@
 
 </div>
 
-<!-- Scripts -->
+<!--Javascript da pagina-->
+<script src="js/lang.js"></script>
 <script src="js/script.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-<!--Script para o JSEmail-->
+
+<!--Script para o JSEmail -->
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 <script>
     // Inicializa o EmailJS com sua chave pública
@@ -183,133 +186,6 @@
     });
 </script>
 
-<script>
-// Definição das traduções atualizadas para o novo formulário
-const translations = {
-    pt: {
-        // Navegação
-        "nav-home": "Início",
-        "nav-especialidades": "Especialidades",
-        "nav-menu": "Menu",
-        "nav-menu-grupos": "Menu para Grupos",
-        "nav-reservas": "Reservas",
-        
-        // Cabeçalho
-        "reservas-titulo": "RESERVAS",
-        "reservas-subtitulo": "Garanta seu momento especial conosco",
-        
-        // Formulário
-        "form-titulo": "Faça sua Reserva",
-        "label-data": "Escolha uma Data:",
-        "data-reserva": "dd/mm/aaaa",
-        "label-horario": "Horário:",
-        "placeholder-horario": "Selecione um horário",
-        "label-pessoas": "Número de Pessoas:",
-        "label-contato": "Contato:",
-        "contato-reserva": "Seu telefone ou e-mail",
-        "label-observacoes": "Observações:",
-        "observacoes-reserva": "Restrições alimentares, salivacários etc.",
-        "btn-reservar": "Reservar","campos-obrigatorios": "Por favor, preencha todos os campos obrigatórios!",
-        "reserva-confirmada": "Reserva confirmada para {data} às {horario} para {pessoas} pessoas. Você receberá uma confirmação por e-mail.",
-        "erro-configuracao": "Reserva salva localmente (configuração de email incompleta)",
-        "erro-envio": "Reserva salva localmente, mas ocorreu um erro ao enviar. Por favor, tente novamente mais tarde.",
-        
-        // Rodapé
-        "footer-endereco": "Endereço: Rua da Alegria, 123 - Porto, Portugal",
-        "footer-contato": "Contacto: 999 999 999",
-    },
-    en: {
-        // Navigation
-        "nav-home": "Home",
-        "nav-especialidades": "Specialties",
-        "nav-menu": "Menu",
-        "nav-menu-grupos": "Group Menu",
-        "nav-reservas": "Reservations",
-        
-        // Header
-        "reservas-titulo": "RESERVATIONS",
-        "reservas-subtitulo": "Book your special moment with us",
-        
-        // Form
-        "form-titulo": "Make Your Reservation",
-        "label-data": "Choose a Date:",
-        "data-reserva": "mm/dd/yyyy",
-        "label-horario": "Time:",
-        "placeholder-horario": "Select a time",
-        "label-pessoas": "Number of People:",
-        "label-contato": "Contact:",
-        "contato-reserva": "Your phone or email",
-        "label-observacoes": "Observations:",
-        "observacoes-reserva": "Dietary restrictions, special requests etc.",
-        "btn-reservar": "Book Now","campos-obrigatorios": "Please fill in all required fields!",
-        "reserva-confirmada": "Reservation confirmed for {data} at {horario} for {pessoas} people. You will receive a confirmation email.",
-        "erro-configuracao": "Reservation saved locally (email configuration incomplete)",
-        "erro-envio": "Reservation saved locally, but there was an error sending. Please try again later.",
-        
-       // Footer
-       "footer-endereco": "Address: Rua da Alegria, 123 - Porto, Portugal",
-        "footer-contato": "Contact: 999 999 999",
-    }
-};
-
-// Função para carregar o idioma salvo
-function loadLanguage() {
-    const savedLanguage = localStorage.getItem("language") || "pt";
-    changeLanguage(savedLanguage);
-}
-
-// Função principal para mudar o idioma
-function changeLanguage(lang) {
-    // Salva o idioma selecionado
-    localStorage.setItem("language", lang);
-    
-    // Atualiza a classe ativa nos seletores de idioma
-    document.querySelectorAll('.language').forEach(el => {
-        el.classList.remove('active');
-    });
-    
-    const activeLangElement = document.getElementById(lang);
-    if (activeLangElement) {
-        activeLangElement.classList.add('active');
-    }
-
-    // Verifica se existem traduções para o idioma selecionado
-    if (!translations[lang]) return;
-
-    // Atualiza todos os elementos com IDs correspondentes
-    Object.keys(translations[lang]).forEach(key => {
-        const elements = document.querySelectorAll(`[id="${key}"]`);
-        elements.forEach(element => {
-            if (element) {
-                if (element.tagName === "INPUT" || element.tagName === "TEXTAREA" || element.tagName === "SELECT") {
-                    element.placeholder = translations[lang][key];
-                } else if (element.tagName === "OPTION" && element.value === "") {
-                    element.textContent = translations[lang][key];
-                } else {
-                    element.textContent = translations[lang][key];
-                }
-            }
-        });
-    });
-}
-
-// Inicialização quando o DOM estiver carregado
-document.addEventListener("DOMContentLoaded", function() {
-    loadLanguage();
-    
-    // Adiciona eventos de clique aos seletores de idioma
-    const ptFlag = document.getElementById('pt');
-    const enFlag = document.getElementById('en');
-    
-    if (ptFlag) ptFlag.addEventListener('click', () => changeLanguage('pt'));
-    if (enFlag) enFlag.addEventListener('click', () => changeLanguage('en'));
-    
-});
-
-// Para garantir que o idioma seja aplicado mesmo se o DOM já estiver carregado
-if (document.readyState === 'complete' || document.readyState === 'interactive') {
-    loadLanguage();
-}
 </script>
 </body>
 </html>

@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="css/style-novaspaginas.css">
 </head>
 <body>
+<!-- Barra de navegação principal -->
 <div class="nova-pagina">
-<!-- Navbar -->
 <nav class="navbar navbar-expand-lg custom-navbar fixed-top">
     <div class="container">
         <div class="language-selector me-3">
@@ -22,10 +22,11 @@
                 <img src="img/bandeira_en.jpg" alt="EN">
             </span>
         </div>
+        <!-- Botão para menu mobile -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        
+        <!-- Links -->
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item"><a id="nav-home" class="nav-link" href="index.html">Início</a></li>
@@ -37,7 +38,7 @@
         </div>
     </div>
 </nav>
-
+<!--Seção com imagem e texto-->
 <header class="d-flex align-items-center menu-header text-white">
     <div class="container text-center">
         <h1 id="menu-titulo">MENU PRINCIPAL</h1>
@@ -158,7 +159,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4 mb-4 mb-md-0">
-                <h5>Contato</h5>
+                <h5>Contatos</h5>
                 <address>
                     <p><i class="fas fa-map-marker-alt me-2"></i> Rua da Alegria, 123 - Porto, Portugal</p>
                     <p><i class="fas fa-phone me-2"></i> 999 999 999</p>
@@ -208,206 +209,10 @@
 
 </div>
 
-<!-- Scripts -->
+<!-- Scripts JS-->
+<script src="js/lang.js"></script>
+<script src="js/script.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-// Definição das traduções
-const translations = {
-    pt: {
-        // Navegação
-        "nav-home": "Início",
-        "nav-especialidades": "Especialidades",
-        "nav-menu": "Menu",
-        "nav-menu-grupos": "Menu para Grupos",
-        "nav-reservas": "Reservas",
-        
-        // Cabeçalho
-        "menu-titulo": "MENU PRINCIPAL",
-        "menu-subtitulo": "Sabores autênticos preparados com ingredientes locais",
-        "menu-descricao": "Explore nossa seleção de pratos tradicionais reinventados",
-        
-        // Categorias
-        "entradas-titulo": "ENTRADAS GOURMET",
-        "pratos-titulo": "PRATOS SIGNATURE",
-        "sobremesas-titulo": "SOBREMESAS PREMIUM",
-        "vinhos-titulo": "VINHOS SELECIONADOS",
-        
-        // Entradas
-        "entrada1-nome": "Tartar de Atum com Abacate",
-        "entrada1-desc": "Atum fresco marinado, abacate Hass, gengibre e molho de soja trufado",
-        "preco-entrada1": "€49.00",
-        "entrada2-nome": "Foie Gras com Geleia de Porto",
-        "entrada2-desc": "Foie gras selado, geleia de vinho do Porto e pão brioche tostado",
-        "preco-entrada2": "€59.00",
-        "entrada3-nome": "Carpaccio de Wagyu",
-        "entrada3-desc": "Finas fatias de wagyu A5, rúcula, queijo parmesão e azeite trufado",
-        "preco-entrada3": "€69.00",
-        
-        // Pratos Principais
-        "prato1-nome": "Risoto de Lagostim e Açafrão",
-        "prato1-desc": "Arroz carnaroli, lagostins frescos, açafrão da Mancha e redução de marisco",
-        "preco-prato1": "€89.00",
-        "prato2-nome": "Lombo de Veado com Purê de Castanha",
-        "prato2-desc": "Lombo de veado selvagem, purê de castanha portuguesa e molho de vinho tinto",
-        "preco-prato2": "€99.00",
-        "prato3-nome": "Bacalhau Negro Confitado",
-        "prato3-desc": "Bacalhau norueguês negro, purê de grão-de-bico trufado e espuma de azeite",
-        "preco-prato3": "€109.00",
-        
-        // Sobremesas
-        "sobremesa1-nome": "Soufflé de Chocolate Belga",
-        "sobremesa1-desc": "Soufflé quente de chocolate Valrhona com sorvete de baunilha Bourbon",
-        "preco-sobremesa1": "€39.00",
-        "sobremesa2-nome": "Tarte Tatin com Foie Gras",
-        "sobremesa2-desc": "Maçã caramelizada, foie gras torchon e sorvete de canela",
-        "preco-sobremesa2": "€49.00",
-        "sobremesa3-nome": "Mille-Feuille de Frutas Vermelhas",
-        "sobremesa3-desc": "Camadas crocantes de massa folhada, creme patissier e frutas vermelhas silvestres",
-        "preco-sobremesa3": "€59.00",
-        
-        // Vinhos
-        "vinho1-nome": "Quinta do Crasto Reserva",
-        "vinho1-desc": "Douro 2018 - Garrafa",
-        "preco-vinho1": "€145.00",
-        "vinho2-nome": "Blandy's Verdelho 10 Anos",
-        "vinho2-desc": "Madeira - Taça",
-        "preco-vinho2": "€199.00",
-        "vinho3-nome": "Champagne Dom Pérignon",
-        "vinho3-desc": "2012 - Garrafa",
-        "preco-vinho3": "€220.00",
-        
-        // Rodapé
-        "footer-endereco": "Endereço: Rua da Alegria, 123 - Porto, Portugal",
-        "footer-contato": "Contacto: 999 999 999",
-        "footer-redes": "<a href='#' class='text-white'><i class='fab fa-instagram'></i> Instagram</a> | <a href='#' class='text-white'><i class='fab fa-facebook'></i> Facebook</a> | <a href='https://wa.me/11234567890' class='text-white' target='_blank'><i class='fab fa-whatsapp'></i> WhatsApp</a>"
-    },
-    en: {
-        // Navigation
-        "nav-home": "Home",
-        "nav-especialidades": "Specialties",
-        "nav-menu": "Menu",
-        "nav-menu-grupos": "Group Menu",
-        "nav-reservas": "Reservations",
-        
-        // Header
-        "menu-titulo": "MAIN MENU",
-        "menu-subtitulo": "Authentic flavors prepared with local ingredients",
-        "menu-descricao": "Explore our selection of reinvented traditional dishes",
-        
-        // Categories
-        "entradas-titulo": "GOURMET STARTERS",
-        "pratos-titulo": "SIGNATURE DISHES",
-        "sobremesas-titulo": "PREMIUM DESSERTS",
-        "vinhos-titulo": "SELECTED WINES",
-        
-        // Starters
-        "entrada1-nome": "Tuna Tartare with Avocado",
-        "entrada1-desc": "Fresh marinated tuna, Hass avocado, ginger and truffle soy sauce",
-        "preco-entrada1": "€49.00",
-        "entrada2-nome": "Foie Gras with Port Wine Jelly",
-        "entrada2-desc": "Seared foie gras, Port wine jelly and toasted brioche",
-        "preco-entrada2": "€59.00",
-        "entrada3-nome": "Wagyu Carpaccio",
-        "entrada3-desc": "Thin slices of A5 wagyu, arugula, parmesan cheese and truffle oil",
-        "preco-entrada3": "€69.00",
-        
-        // Main Courses
-        "prato1-nome": "Prawn and Saffron Risotto",
-        "prato1-desc": "Carnaroli rice, fresh prawns, Spanish saffron and seafood reduction",
-        "preco-prato1": "€89.00",
-        "prato2-nome": "Venison Loin with Chestnut Purée",
-        "prato2-desc": "Wild venison loin, Portuguese chestnut purée and red wine sauce",
-        "preco-prato2": "€99.00",
-        "prato3-nome": "Confit Black Cod",
-        "prato3-desc": "Norwegian black cod, truffled chickpea purée and olive oil foam",
-        "preco-prato3": "€109.00",
-        
-        // Desserts
-        "sobremesa1-nome": "Belgian Chocolate Soufflé",
-        "sobremesa1-desc": "Hot Valrhona chocolate soufflé with Bourbon vanilla ice cream",
-        "preco-sobremesa1": "€39.00",
-        "sobremesa2-nome": "Tarte Tatin with Foie Gras",
-        "sobremesa2-desc": "Caramelized apple, foie gras torchon and cinnamon ice cream",
-        "preco-sobremesa2": "€49.00",
-        "sobremesa3-nome": "Red Berries Mille-Feuille",
-        "sobremesa3-desc": "Crispy layers of puff pastry, patissier cream and wild red berries",
-        "preco-sobremesa3": "€59.00",
-        
-        // Wines
-        "vinho1-nome": "Quinta do Crasto Reserva",
-        "vinho1-desc": "Douro 2018 - Bottle",
-        "preco-vinho1": "€145.00",
-        "vinho2-nome": "Blandy's Verdelho 10 Years",
-        "vinho2-desc": "Madeira - Glass",
-        "preco-vinho2": "€199.00",
-        "vinho3-nome": "Champagne Dom Pérignon",
-        "vinho3-desc": "2012 - Bottle",
-        "preco-vinho3": "€220.00",
-        
-        // Footer
-        "footer-endereco": "Address: Rua da Alegria, 123 - Porto, Portugal",
-        "footer-contato": "Contact: 999 999 999",
-        "footer-redes": "<a href='#' class='text-white'><i class='fab fa-instagram'></i> Instagram</a> | <a href='#' class='text-white'><i class='fab fa-facebook'></i> Facebook</a> | <a href='https://wa.me/11234567890' class='text-white' target='_blank'><i class='fab fa-whatsapp'></i> WhatsApp</a>"
-    }
-};
 
-// Função para carregar o idioma salvo
-function loadLanguage() {
-    const savedLanguage = localStorage.getItem("language") || "pt";
-    changeLanguage(savedLanguage);
-}
-
-// Função principal para mudar o idioma
-function changeLanguage(lang) {
-    // Salva o idioma selecionado
-    localStorage.setItem("language", lang);
-    
-    // Atualiza a classe ativa nos seletores de idioma
-    document.querySelectorAll('.language').forEach(el => {
-        el.classList.remove('active');
-    });
-    
-    const activeLangElement = document.getElementById(lang);
-    if (activeLangElement) {
-        activeLangElement.classList.add('active');
-    }
-
-    // Verifica se existem traduções para o idioma selecionado
-    if (!translations[lang]) return;
-
-    // Atualiza todos os elementos com IDs correspondentes
-    Object.keys(translations[lang]).forEach(key => {
-        const elements = document.querySelectorAll(`[id="${key}"]`);
-        elements.forEach(element => {
-            if (element) {
-                if (element.tagName === "INPUT" || element.tagName === "TEXTAREA") {
-                    element.placeholder = translations[lang][key];
-                } else {
-                    element.innerHTML = translations[lang][key];
-                }
-            }
-        });
-    });
-}
-
-// Inicialização quando o DOM estiver carregado
-document.addEventListener("DOMContentLoaded", function() {
-    loadLanguage();
-    
-    // Adiciona eventos de clique aos seletores de idioma
-    const ptFlag = document.getElementById('pt');
-    const enFlag = document.getElementById('en');
-    
-    if (ptFlag) ptFlag.addEventListener('click', () => changeLanguage('pt'));
-    if (enFlag) enFlag.addEventListener('click', () => changeLanguage('en'));
-});
-
-// Para garantir que o idioma seja aplicado mesmo se o DOM já estiver carregado
-if (document.readyState === 'complete' || document.readyState === 'interactive') {
-    loadLanguage();
-} else {
-    document.addEventListener('DOMContentLoaded', loadLanguage);
-}
-</script>
 </body>
 </html>

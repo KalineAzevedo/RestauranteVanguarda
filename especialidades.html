@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="css/style-novaspaginas.css">
 </head>
 <body>
+<!-- Barra de navegação principal -->
 <div class="nova-pagina">
-<!--Navbar-->
 <nav class="navbar navbar-expand-lg custom-navbar fixed-top">
     <div class="container">
         <div class="language-selector me-3">
@@ -27,7 +27,7 @@
             <span class="navbar-toggler-icon"></span>
     </button>
             
-    <!-- Menu (alinhado à direita) -->
+    <!-- Links -->
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav">
             <li class="nav-item"><a id="nav-home" class="nav-link" href="index.html">Início</a></li>
@@ -39,7 +39,7 @@
     </div>
     </div>
 </nav>
-
+    <!--Seção com imagem e texto-->
     <header class="d-flex align-items-center especialidades-header text-white">
         <div class="container text-center">
             <h1 id="especialidades-titulo">Nossas Especialidades</h1>
@@ -67,12 +67,12 @@
                     <p class="chef-signature" id="assinatura-chef">— Chef Kaline Azevedo</p>
                 </div>
             </div>
-            
+            <!--Imagens e textos das especialidades-->
             <div class="col-lg-6">
                 <div class="row">
                     <div class="col-md-6 mb-4">
                         <div class="card especialidade-card">
-                            <img src="img/francesinha.webp" class="card-img-top" alt="Francesinha">
+                            <img src="/img/francesinha.jpg" class="card-img-top" alt="Francesinha">
                             <div class="card-body">
                                 <h5 id="card-francesinha-titulo">Francesinha Vanguarda</h5>
                                 <p id="card-francesinha-desc">Versão premiada do clássico portuense</p>
@@ -83,7 +83,7 @@
                     
                     <div class="col-md-6 mb-4">
                         <div class="card especialidade-card">
-                            <img src="img/bacalhau.jpg" class="card-img-top" alt="Bacalhau">
+                            <img src="/img/bacalhau.jpg" class="card-img-top" alt="Bacalhau">
                             <div class="card-body">
                                 <h5 id="card-bacalhau-titulo">Bacalhau à Brás Gourmet</h5>
                                 <p id="card-bacalhau-desc">Com batata-doce e azeite trufado</p>
@@ -94,7 +94,7 @@
                     
                     <div class="col-md-6 mb-4">
                         <div class="card especialidade-card">
-                            <img src="img/Polvo.jpg" class="card-img-top" alt="Polvo">
+                            <img src="/img/polvo.jpg" class="card-img-top" alt="Polvo">
                             <div class="card-body">
                                 <h5 id="card-polvo-titulo">Polvo do Lagar</h5>
                                 <p id="card-polvo-desc">Confitado com purê de grão-de-bico</p>
@@ -105,7 +105,7 @@
                     
                     <div class="col-md-6 mb-4">
                         <div class="card especialidade-card">
-                            <img src="img/leitao.jpg" class="card-img-top" alt="Leitão">
+                            <img src="/img/leitao.jpg" class="card-img-top" alt="Leitão">
                             <div class="card-body">
                                 <h5 id="card-leitao-titulo">Leitão da Moleza</h5>
                                 <p id="card-leitao-desc">Assado lentamente com vinho do Porto</p>
@@ -123,7 +123,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4 mb-4 mb-md-0">
-                <h5>Contato</h5>
+                <h5>Contatos</h5>
                 <address>
                     <p><i class="fas fa-map-marker-alt me-2"></i> Rua da Alegria, 123 - Porto, Portugal</p>
                     <p><i class="fas fa-phone me-2"></i> 999 999 999</p>
@@ -174,174 +174,10 @@
 
 </div>
 
-<!--Javascript da pagina-->
-<script>
-// Definição das traduções 
-const translations = {
-    pt: {
-        // Navegação
-        "nav-home": "Início",
-        "nav-menu": "Menu",
-        "nav-especialidades": "Especialidades",
-        "nav-menu-grupos": "Menu para Grupos",
-        "nav-reservas": "Reservas",
-        
-        // Cabeçalho
-        "especialidades-titulo": "Nossas Especialidades",
-        "especialidades-subtitulo-header": "Tradição portuguesa com toque gourmet",
-        
-        // Seção principal
-        "especialidades-subtitulo": "Cozinha Portuguesa Reinventada",
-        "especialidades-texto1": "No Restaurante Vanguarda, honramos as raízes da gastronomia portuguesa enquanto exploramos novas fronteiras de sabor e apresentação. Nossas especialidades são fruto de uma cuidadosa reinterpretação dos clássicos, onde técnica contemporânea encontra ingredientes excepcionais.",
-        "especialidades-texto2": "Cada prato em nosso menu de especialidades conta uma história - da origem dos ingredientes à técnica aplicada, da tradição à inovação. Trabalhamos exclusivamente com produtores locais, garantindo não apenas qualidade superior, mas também o apoio à comunidade que nos inspira.",
-        
-        // Pratos
-        "francesinha-titulo": "Francesinha Vanguarda",
-        "francesinha-desc": "Nossa assinatura gourmet do clássico portuense. Camadas de pão artesanal, linguiça de caça, presunto ibérico e bife de wagyu, cobertos por queijos especiais e um molho secreto envelhecido 48 horas com especiarias raras e cerveja stout. Finalizada com um toque de folha de ouro - uma ode luxuosa à tradição.",
-        "bacalhau-titulo": "Bacalhau à Brás Gourmet",
-        "bacalhau-desc": "Desconstruímos o tradicional para criar poesia gastronômica. Lasquinhas de bacalhau negro norueguês, batata-doce cristalizada em azeite aromatizado, ovos orgânicos cremosos e crocantes de alho negro. Coroado com caviar de azeitona e espuma de azeite trufado - onde a memória afetiva encontra a vanguarda.",
-        "polvo-titulo": "Polvo do Lagar",
-        "polvo-desc": "Tentáculos confitados por 6 horas em azeite do Alentejo, acompanhados por um purê de grão-de-bico com tahine e limão-siciliano. Sobre um leito de espuma de batata-doce, finalizado com redução de vinagre balsâmico envelhecido e pétalas de flor de sal - o Mediterrâneo reinventado.",
-        "leitao-titulo": "Leitão da Moleza",
-        "leitao-desc": "A perfeição da textura: carré de leitão assado lentamente por 12 horas com ervas frescas e redução de vinho do Porto vintage. Servido com perlas de pêra-rocha caramelizada e purê de maçã reineta com canela. A crocância dourada esconde uma carne que se desfaz - a alquimia entre técnica e tradição.",
-        "citacao-chef": "\"Cada prato é um capítulo da nossa história portuguesa, escrito com os ingredientes da terra e a caligrafia da inovação.\"",
-        "assinatura-chef": "— Chef Kaline Azevedo",
-        
-        // Cards
-        "card-francesinha-titulo": "Francesinha Vanguarda",
-        "card-francesinha-desc": "Versão premiada do clássico portuense",
-        "card-bacalhau-titulo": "Bacalhau à Brás Gourmet",
-        "card-bacalhau-desc": "Com batata-doce e azeite trufado",
-        "card-polvo-titulo": "Polvo do Lagar",
-        "card-polvo-desc": "Confitado com purê de grão-de-bico",
-        "card-leitao-titulo": "Leitão da Moleza",
-        "card-leitao-desc": "Assado lentamente com vinho do Porto",
-        
-        // Rodapé
-        "footer-endereco": "Endereço: Rua da Alegria, 123 - Porto, Portugal",
-        "footer-contato": "Contacto: 999 999 999",
-        "footer-redes": "<a href='#' class='text-white'><i class='fab fa-instagram'></i> Instagram</a> | <a href='#' class='text-white'><i class='fab fa-facebook'></i> Facebook</a> | <a href='https://wa.me/11234567890' class='text-white' target='_blank'><i class='fab fa-whatsapp'></i> WhatsApp</a>"
-    },
-    en: {
-        // Navigation
-        "nav-home": "Home",
-        "nav-menu": "Menu",
-        "nav-especialidades": "Specialties",
-        "nav-menu-grupos": "Group Menu",
-        "nav-reservas": "Reservations",
-        
-        // Header
-        "especialidades-titulo": "Our Specialties",
-        "especialidades-subtitulo-header": "Portuguese tradition with a gourmet touch",
-        
-        // Main section
-        "especialidades-subtitulo": "Reinvented Portuguese Cuisine",
-        "especialidades-texto1": "At Restaurante Vanguarda, we honor the roots of Portuguese gastronomy while exploring new frontiers of flavor and presentation. Our specialties are the result of careful reinterpretation of classics, where contemporary technique meets exceptional ingredients.",
-        "especialidades-texto2": "Each dish on our specialties menu tells a story - from the origin of the ingredients to the applied technique, from tradition to innovation. We work exclusively with local producers, ensuring not only superior quality but also support for the community that inspires us.",
-        
-        // Dishes
-        "francesinha-titulo": "Vanguarda Francesinha",
-        "francesinha-desc": "Our gourmet signature of the Porto classic. Layers of artisanal bread, game sausage, Iberian ham and wagyu steak, covered with special cheeses and a secret sauce aged for 48 hours with rare spices and stout beer. Finished with a touch of gold leaf - a luxurious ode to tradition.",
-        "bacalhau-titulo": "Gourmet Bacalhau à Brás",
-        "bacalhau-desc": "We deconstruct the traditional to create gastronomic poetry. Shreds of Norwegian black cod, sweet potato crystallized in flavored olive oil, creamy organic eggs and black garlic crisps. Crowned with olive caviar and truffled olive oil foam - where affective memory meets avant-garde.",
-        "polvo-titulo": "Lagar Octopus",
-        "polvo-desc": "Tentacles confited for 6 hours in Alentejo olive oil, accompanied by chickpea puree with tahini and Sicilian lemon. On a bed of sweet potato foam, finished with aged balsamic vinegar reduction and salt flower petals - the reinvented Mediterranean.",
-        "leitao-titulo": "Tender Suckling Pig",
-        "leitao-desc": "The perfection of texture: suckling pig rack slowly roasted for 12 hours with fresh herbs and vintage Port wine reduction. Served with caramelized Rocha pear pearls and Reineta apple puree with cinnamon. The golden crispiness hides meat that falls apart - the alchemy between technique and tradition.",
-        "citacao-chef": "\"Each dish is a chapter of our Portuguese story, written with the ingredients of the land and the calligraphy of innovation.\"",
-        "assinatura-chef": "— Chef Kaline Azevedo",
-        
-        // Cards
-        "card-francesinha-titulo": "Vanguarda Francesinha",
-        "card-francesinha-desc": "Award-winning version of the Porto classic",
-        "card-bacalhau-titulo": "Gourmet Bacalhau à Brás",
-        "card-bacalhau-desc": "With sweet potato and truffled olive oil",
-        "card-polvo-titulo": "Lagar Octopus",
-        "card-polvo-desc": "Confit with chickpea puree",
-        "card-leitao-titulo": "Tender Suckling Pig",
-        "card-leitao-desc": "Slow roasted with Port wine",
-        
-        // Footer
-        "footer-endereco": "Address: Rua da Alegria, 123 - Porto, Portugal",
-        "footer-contato": "Contact: 999 999 999",
-        "footer-redes": "<a href='#' class='text-white'><i class='fab fa-instagram'></i> Instagram</a> | <a href='#' class='text-white'><i class='fab fa-facebook'></i> Facebook</a> | <a href='https://wa.me/11234567890' class='text-white' target='_blank'><i class='fab fa-whatsapp'></i> WhatsApp</a>"
-    }
-};
-
-// Função para carregar o idioma salvo
-function loadLanguage() {
-    const savedLanguage = localStorage.getItem("language") || "pt";
-    changeLanguage(savedLanguage);
-}
-
-// Função principal para mudar o idioma
-function changeLanguage(lang) {
-    // Salva o idioma selecionado
-    localStorage.setItem("language", lang);
-    
-    // Atualiza a classe ativa nos seletores de idioma
-    document.querySelectorAll('.language').forEach(el => {
-        el.classList.remove('active');
-    });
-    
-    const activeLangElement = document.getElementById(lang);
-    if (activeLangElement) {
-        activeLangElement.classList.add('active');
-    }
-
-    // Verifica se existem traduções para o idioma selecionado
-    if (!translations[lang]) return;
-
-    // Atualiza todos os elementos com IDs correspondentes
-    Object.keys(translations[lang]).forEach(key => {
-        const elements = document.querySelectorAll(`[id="${key}"]`);
-        elements.forEach(element => {
-            if (element) {
-                if (element.tagName === "INPUT" || element.tagName === "TEXTAREA") {
-                    element.placeholder = translations[lang][key];
-                } else {
-                    element.innerHTML = translations[lang][key];
-                }
-            }
-        });
-    });
-}
-
-// Inicialização quando o DOM estiver carregado
-document.addEventListener("DOMContentLoaded", function() {
-    loadLanguage();
-    
-    // Adiciona eventos de clique aos seletores de idioma
-    const ptFlag = document.getElementById('pt');
-    const enFlag = document.getElementById('en');
-    
-    if (ptFlag) ptFlag.addEventListener('click', () => changeLanguage('pt'));
-    if (enFlag) enFlag.addEventListener('click', () => changeLanguage('en'));
-    
-    // Animação dos cards
-    const cards = document.querySelectorAll('.especialidade-card');
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('animated');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.1 });
-    
-    cards.forEach(card => {
-        observer.observe(card);
-    });
-});
-
-// Para garantir que o idioma seja aplicado mesmo se o DOM já estiver carregado
-if (document.readyState === 'complete' || document.readyState === 'interactive') {
-    loadLanguage();
-} else {
-    document.addEventListener('DOMContentLoaded', loadLanguage);
-}
-</script>
-
+<!--Scripts JS-->
+<script src="js/lang.js"></script> 
+<script src="js/script.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>

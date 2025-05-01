@@ -1,16 +1,28 @@
-/* Variáveis de cores */
+/* ============================================= */
+/* VARIÁVEIS GLOBAIS */
+/* ============================================= */
 :root {
-    --primary-color:#6e5e2d;
+    --primary-color: #6e5e2d;
     --secondary-color: #8b0000;
     --text-color: #5C3D2E;
     --white-color: #FFFFFF;
     --black-color: #2F2F2F;
 }
-/* Reset básico */
+
+/* ============================================= */
+/* RESET E CONFIGURAÇÕES BASE */
+/* ============================================= */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 body {
@@ -19,6 +31,9 @@ body {
     color: var(--text-color);
 }
 
+/* ============================================= */
+/* TIPOGRAFIA */
+/* ============================================= */
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Bebas Neue', sans-serif;
     font-weight: normal;
@@ -32,14 +47,9 @@ h1, h2, h3, h4, h5, h6 {
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
 }
 
-html, body {
-    overflow-x: hidden;
-    max-width: 100%;
-    margin: 0;
-    padding: 0;
-}
-
-/* Navbar */
+/* ============================================= */
+/* NAVBAR - ESTILOS GERAIS */
+/* ============================================= */
 .custom-navbar {
     background-color: transparent !important;
     position: absolute;
@@ -58,19 +68,26 @@ html, body {
     transition: color 0.3s ease;
 }
 
+.nav-link:hover {
+    color: var(--secondary-color) !important;
+}
+
+.nav-link.active {
+    color: var(--secondary-color) !important;
+    border-bottom: 2px solid var(--secondary-color);
+}
+
 .custom-navbar .navbar-nav .nav-link.active {
     color: #8b0000 !important;
     border-bottom-color: #8b0000;
 }
 
-.nav-link:hover {
-    color: var(--secondary-color) !important;
-}
-
-/* Menu Desktop - Links alinhados à direita */
+/* ============================================= */
+/* NAVBAR - LAYOUT DESKTOP */
+/* ============================================= */
 @media (min-width: 992px) {
     .navbar-nav {
-        margin-left: auto; /* Empurra os links para a direita */
+        margin-left: auto;
     }
     
     .nav-item {
@@ -78,7 +95,9 @@ html, body {
     }
 }
 
-/* Estilo para o menu hamburger em telas pequenas */
+/* ============================================= */
+/* NAVBAR - LAYOUT MOBILE */
+/* ============================================= */
 @media (max-width: 991.98px) {
     .custom-navbar {
         padding: 15px;
@@ -123,14 +142,15 @@ html, body {
         display: inline-block;
     }
     
-    /* Mantém o hamburger visível */
     .navbar-toggler {
         position: relative;
         z-index: 1100;
     }
 }
 
-/* Seletor de idiomas */
+/* ============================================= */
+/* SELETOR DE IDIOMAS */
+/* ============================================= */
 .language-selector {
     display: flex;
     align-items: center;
@@ -162,44 +182,54 @@ html, body {
     opacity: 0.7;
 }
 
-/* Link ativo */
-.nav-link.active {
-    color: var(--secondary-color) !important;
-    border-bottom: 2px solid var(--secondary-color);
+/* ============================================= */
+/* HEADER PRINCIPAL */
+/* ============================================= */
+.custom-header {
+    padding-top: 60px;
+    position: relative;
+    height: 100vh;
+    min-height: 800px;
+    max-height: 800px;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    text-align: center;
 }
 
-/* Header e Carrossel */
+/* ============================================= */
+/* LOGOTIPO E TEXTOS DO HEADER */
+/* ============================================= */
 .logo-text {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center; /* Adicionado para centralização vertical */
+    justify-content: center;
+    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -5%);
     z-index: 10;
     text-align: center;
-    width: 90%; /* Alterado para 90% para melhor responsividade */
-    max-width: 1200px; /* Largura máxima para telas muito grandes */
+    width: 90%;
+    max-width: 1200px;
     padding: 20px;
     box-sizing: border-box;
 }
 
-/* Estilo para "RESTAURANTE" */
 .restaurante-text {
     font-family: 'Helvetica Neue', Arial, sans-serif;
     font-size: 2rem;
     font-weight: 300;
     letter-spacing: 8px;
     text-transform: uppercase;
-    color: #ffffff; /* Branco puro */
+    color: #ffffff;
     margin-bottom: -5px;
     text-shadow: 
-        2px 2px 4px rgba(0, 0, 0, 0.8), /* Sombra mais forte */
-        0 0 10px rgba(0, 0, 0, 0.5); /* Efeito de glow suave */
+        2px 2px 4px rgba(0, 0, 0, 0.8),
+        0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-/* Estilo para "Vanguarda" */
 .vanguarda-text {
     font-family: 'Times New Roman', serif;
     font-size: 7rem;
@@ -211,114 +241,28 @@ html, body {
     display: block;
 }
 
-/* TABLETS (768px - 992px) */
-@media (max-width: 700px) {
-    .logo-text {
-        position: absolute;
-        transform: translate(-50%, -50%);
-        padding: 15px;
-    }
-    
-    .restaurante-text {
-        font-size: 2rem;
-        letter-spacing: 1px;
-        margin-bottom: 5px;
-    }
-    
-    .vanguarda-text {
-        font-size: 7rem;
-    }
-}
-
-/* TABLETS PEQUENOS (576px - 768px) */
-@media (max-width: 768px) {
-    .logo-text {
-        position: absolute;
-        transform: translate(-50%, -50%);
-        width: 100%;
-        padding: 10px;
-    }
-    
-    .restaurante-text {
-        font-size: 1.8rem; /* Tamanho aumentado */
-        letter-spacing: 4px; /* Espaçamento reduzido */
-        margin-bottom: 5px; /* Espaço entre textos reduzido */
-        line-height: 1;
-    }
-    
-    .vanguarda-text {
-        font-size: 5.5rem; /* Tamanho aumentado */
-        margin-top: -5px; /* Espaço reduzido acima do texto */
-        line-height: 0.9;
-    }
-}
-
-/* CELULARES (até 576px) */
-@media (max-width: 576px) {
-    .logo-text {
-        transform: translate(-50%, -50%);
-        width: 100%;
-        padding: 5px;
-    }
-    
-    .restaurante-text {
-        font-size: 2rem; /* Tamanho aumentado */
-        letter-spacing: 3px; /* Espaçamento reduzido */
-        margin-bottom: 20px; /* Espaço entre textos removido */
-        line-height: 1;
-    }
-    
-    .vanguarda-text {
-        font-size: 5rem; /* Tamanho aumentado */
-        line-height: 2rem;
-    }
-}
-
-/* AJUSTE PARA TELAS MUITO PEQUENAS */
-@media (max-width: 400px) {
-    .restaurante-text {
-        font-size: 1.2rem; /* Tamanho aumentado */
-        letter-spacing: 5px;
-        
-    }
-    
-    .vanguarda-text {
-        font-size: 4rem; /* Tamanho aumentado */
-        line-height: 2rem;
-    }
-}
-
-.custom-header {
-    padding-top: 60px; /* Espaço para o navbar fixo */
-    position: relative;
-    height: 100vh; /* Reduzi para 70% da viewport */
-    min-height: 800px; /* Altura mínima garantida */
-    max-height: 800px; /* Altura máxima para não ficar muito grande */
-    overflow: hidden;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-}
-
+/* ============================================= */
+/* CARROSSEL */
+/* ============================================= */
 .carousel-item {
     position: relative;
-    height: 100%; /* Ocupa 100% da altura da tela */
-    width: 100%; /* Ocupa 100% da largura da tela */
-    margin: 0; /* Remove margens */
-    padding: 0; /* Remove paddings */
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 .carousel-item img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Mantém proporção e cobre a área */
-    object-position: center; /* Centraliza a imagem */
+    object-fit: cover;
+    object-position: center;
 }
 
 .carousel, 
 .carousel-inner, 
 .carousel-item {
-    height: 100%; /* Garante que ocupe todo o espaço do header */
+    height: 100%;
     width: 100%;
 }
 
@@ -335,13 +279,15 @@ html, body {
 .custom-header-title {
     font-size: 4rem;
     font-weight: bold;
-    color: var(--white-color); /* Cor branca para o texto */
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8); /* Sombra para melhorar a legibilidade */
-    margin: 0; /* Remove margens do título */
-    padding: 0; /* Remove padding do título */
+    color: var(--white-color);
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+    margin: 0;
+    padding: 0;
 }
 
-/* Correção dos indicadores */
+/* ============================================= */
+/* INDICADORES DO CARROSSEL */
+/* ============================================= */
 .carousel-indicators {
     position: absolute;
     bottom: 30px;
@@ -373,61 +319,50 @@ html, body {
     height: 12px;
 }
 
-/* Ajustes para tablets e celulares (até 768px) */
-@media (max-width: 768px) {
-    .carousel {
-        overflow: hidden; /* Remove completamente a barra de rolagem */
-        position: relative;
-    }
-    
-    .carousel-inner {
-        display: block; /* Muda de flex para block - essencial para o correto funcionamento */
-        width: 100%;
-        white-space: nowrap; /* Impede quebra de linha dos itens */
-    }
-    
-    .carousel-item {
-        width: 100%;
-        display: inline-block !important; /* Importante para o alinhamento horizontal */
-        vertical-align: top;
-        transition: transform 0.6s ease; /* Adiciona transição suave */
-        margin-right: 0;
-    }
-    
-    /* Garante que apenas o slide ativo seja visível */
-    .carousel-item:not(.active) {
-        display: none !important;
-    }
-  
-/* Ajustes específicos para celulares pequenos */
-@media (max-width: 576px) {
-.carousel-indicators {
-    bottom: 15px;
-}
-    
-.carousel-indicators li {
-    width: 10px;
-    height: 10px;
-    }
-}
-    
-/* Remove qualquer margem ou padding indesejado */
-.carousel-indicators,
-.carousel-caption {
-    margin: 0;
-    padding: 0;
-}
-    
-.carousel-caption {
-    top: 50%;
-    transform: translateY(-50%);
-    width: 100%;
-    left: 0;
-}
+/* ============================================= */
+/* BOTÕES */
+/* ============================================= */
+.custom-btn {
+    background: #433d3b;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-family: 'Montserrat', sans-serif;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+    cursor: pointer;
+    border: none;
+    display: inline-block;
+    text-decoration: none;
+    pointer-events: auto;
 }
 
-/* Ajustes para mobile */
-@media (max-width: 768px) {
+.custom-btn:hover {
+    background: #6A5F5A;
+    color: white;
+}
+
+/* ============================================= */
+/* RESPONSIVIDADE - TABLET (768px - 992px) */
+/* ============================================= */
+@media (max-width: 992px) {
+    .logo-text {
+        transform: translate(-50%, -50%);
+        padding: 15px;
+    }
+    
+    .restaurante-text {
+        font-size: 1.8rem;
+        letter-spacing: 4px;
+        margin-bottom: 5px;
+    }
+    
+    .vanguarda-text {
+        font-size: 5.5rem;
+        margin-top: -5px;
+        line-height: 0.9;
+    }
+    
     .carousel-indicators {
         bottom: 20px;
         gap: 10px;
@@ -442,64 +377,91 @@ html, body {
         width: 10px;
         height: 10px;
     }
-}
     
     .custom-header-title {
-        font-size: 2rem;
+        font-size: 2.5rem;
+    }
+}
+
+/* ============================================= */
+/* RESPONSIVIDADE - MOBILE (até 768px) */
+/* ============================================= */
+@media (max-width: 768px) {
+    .logo-text {
+        width: 100%;
+        padding: 10px;
+    }
+    
+    .restaurante-text {
+        font-size: 1.5rem;
+        letter-spacing: 3px;
+    }
+    
+    .vanguarda-text {
+        font-size: 4.5rem;
+        line-height: 1.2;
+    }
+    
+    .carousel-inner {
+        display: block;
+        width: 100%;
+    }
+    
+    .carousel-item {
+        display: inline-block !important;
+        vertical-align: top;
+        transition: transform 0.6s ease;
+    }
+    
+    .carousel-item:not(.active) {
+        display: none !important;
     }
     
     .carousel-caption {
-        top: 50%;
-        transform: translateY(-50%);
-        width: 100%;
+        padding: 20px;
     }
-
-
-/* Ajustes para o carrossel em telas pequenas */
-@media (max-width: 768px) {
-.carousel-inner {
-        display: flex;
-        overflow-x: hidden; /* Remove isso para comportamento de slide */
 }
+
+/* ============================================= */
+/* RESPONSIVIDADE - CELULARES PEQUENOS (até 576px) */
+/* ============================================= */
+@media (max-width: 576px) {
+    .logo-text {
+        padding: 5px;
+    }
     
-.carousel-item {
-        width: 100% !important; /* Força ocupar 100% da largura */
-        flex: 0 0 100% !important; /* Remove o comportamento flexível */
-        margin-right: 0 !important; /* Remove margens entre itens */
-        display: block !important; /* Garante que apenas um item seja visível */
-}
+    .restaurante-text {
+        font-size: 1.2rem;
+        letter-spacing: 2px;
+        margin-bottom: 10px;
+    }
     
-.custom-header-title {
-        font-size: 2rem;
-}
+    .vanguarda-text {
+        font-size: 3.5rem;
+        line-height: 1;
+    }
     
-.carousel-caption {
-        top: 50%;
-        transform: translateY(-50%);
-}
-}
-/* Botões */
-.custom-btn {
-    background: #433d3b; /* Castanho escuro */
-    color: white; /* Cor do texto */
-    font-weight: bold;
-    border-radius: 5px;
-    padding: 10px 20px;
-    font-family: 'Montserrat', sans-serif;
-    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
-    cursor: pointer; /* Garante que o cursor mude para pointer */
-    border: none; /* Remove borda padrão do Bootstrap */
-    display: inline-block; /* Necessário para links se comportarem como botões */
-    text-decoration: none; /* Remove sublinhado dos links */
-    pointer-events: auto;
+    .carousel-indicators {
+        bottom: 15px;
+    }
 }
 
-.custom-btn:hover {
-    background: #6A5F5A; /* Tom mais claro no hover */
-    color: white; /* Mantém a cor do texto consistente */
+/* ============================================= */
+/* AJUSTES PARA TELAS MUITO PEQUENAS (até 400px) */
+/* ============================================= */
+@media (max-width: 400px) {
+    .restaurante-text {
+        font-size: 1rem;
+        letter-spacing: 1px;
+    }
+    
+    .vanguarda-text {
+        font-size: 3rem;
+    }
 }
-
-/* Seção História */
+/* ============================================= */
+/* SEÇÃO HISTÓRIA */
+/* ============================================= */
 .historia-section {
     display: flex;
     justify-content: center;
@@ -510,47 +472,43 @@ html, body {
 
 .historia-content {
     display: flex;
-    align-items: center; /* Centraliza verticalmente */
+    align-items: center;
     max-width: 1100px;
     margin: auto;
     gap: 50px;
 }
 
-/* Grade de Fotos */
 .historia-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Duas colunas */
-    grid-template-rows: repeat(2, 1fr); /* Duas linhas */
-    gap: 15px; /* Espaço entre as fotos */
-    width: 50%; /* Ocupa metade da largura */
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 15px;
+    width: 50%;
 }
 
 .historia-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Garante que as fotos cubram o espaço sem distorção */
+    object-fit: cover;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Ajustes para o texto */
 .historia-text {
-    width: 50%; /* Ocupa metade da largura */
+    width: 50%;
     max-width: 600px;
     text-align: left;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Centraliza verticalmente */
+    justify-content: center;
     font-family: 'Montserrat', sans-serif;
 }
 
 .historia-title {
     font-size: 2.2rem;
-    font-family: 'Montserrat', sans-serif;
     font-weight: bold;
     color: #333;
     margin-bottom: 15px;
-    font-family: 'Montserrat', sans-serif;
 }
 
 .historia-text p {
@@ -562,8 +520,8 @@ html, body {
 
 .historia-btn {
     display: block;
-    width: fit-content;  /* Ajusta a largura do botão ao conteúdo */
-    margin: 0 auto;      /* Centraliza horizontalmente */
+    width: fit-content;
+    margin: 0 auto;
     padding: 10px 20px;
     font-size: 1rem;
     font-weight: bold;
@@ -579,52 +537,13 @@ html, body {
     background: #555;
 }
 
-/* Responsividade para a seção "Nossa História" */
-@media (max-width: 1200px) {
-    .historia-content {
-        flex-direction: column;
-        gap: 30px;
-    }
-
-    .historia-grid,
-    .historia-text {
-        width: 100%;
-    }
-
-    .historia-title {
-        font-size: 2rem;
-    }
-
-    .historia-text p {
-        font-size: 1rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .historia-grid {
-        grid-template-columns: 1fr; /* Uma coluna em telas pequenas */
-        grid-template-rows: auto;
-        gap: 10px;
-    }
-
-    .historia-image img {
-        height: 200px; /* Altura fixa para as imagens em telas pequenas */
-    }
-
-    .historia-title {
-        font-size: 1.8rem;
-    }
-
-    .historia-text p {
-        font-size: 0.9rem;
-    }
-}
-
-/* Animação de fade-in */
+/* ============================================= */
+/* ANIMAÇÕES */
+/* ============================================= */
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(20px); /* Desliza levemente para cima */
+        transform: translateY(20px);
     }
     to {
         opacity: 1;
@@ -633,40 +552,24 @@ html, body {
 }
 
 .fade-in {
-    opacity: 0; /* Inicialmente invisível */
-    animation: fadeIn 2s ease forwards; /* Animação de 2 segundo */
+    opacity: 0;
+    animation: fadeIn 2s ease forwards;
 }
 
-/* Atrasos para cada elemento */
-.fade-in:nth-child(1) {
-    animation-delay: 0.6s;
-}
+.fade-in:nth-child(1) { animation-delay: 0.6s; }
+.fade-in:nth-child(2) { animation-delay: 0.8s; }
+.fade-in:nth-child(3) { animation-delay: 1s; }
+.fade-in:nth-child(4) { animation-delay: 1.2s; }
+.fade-in:nth-child(5) { animation-delay: 4s; }
+.fade-in:nth-child(6) { animation-delay: 4s; }
 
-.fade-in:nth-child(2) {
-    animation-delay: 0.8s;
-}
-
-.fade-in:nth-child(3) {
-    animation-delay: 0.10s;
-}
-
-.fade-in:nth-child(4) {
-    animation-delay: 0.12s;
-}
-
-.fade-in:nth-child(5) {
-    animation-delay: 4s;
-}
-
-.fade-in:nth-child(6) {
-    animation-delay: 4s;
-}
-
-/* Seção de Reservas */
+/* ============================================= */
+/* SEÇÃO DE RESERVAS */
+/* ============================================= */
 .reserva-section {
     position: relative;
-    height: 100vh; /* Ocupa toda a altura da tela */
-    background: url('../img/reserva-bg.jpg') center/cover no-repeat; /* Imagem de fundo */
+    height: 100vh;
+    background: url('../img/reserva-bg.jpg') center/cover no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -674,33 +577,30 @@ html, body {
     text-align: center;
 }
 
-/* Overlay para opacidade */
 .reserva-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Fundo escuro com 50% de opacidade */
+    background: rgba(0, 0, 0, 0.5);
     z-index: 1;
 }
 
 .reserva-wrapper {
     position: relative;
-    z-index: 2; /* Garante que o conteúdo fique acima do overlay */
+    z-index: 2;
     max-width: 800px;
     padding: 20px;
 }
 
-/* Estilo do texto sobre horários e reservas */
 .reserva-info {
-    background: rgba(0, 0, 0, 0.7); /* Fundo escuro com 70% de opacidade */
+    background: rgba(0, 0, 0, 0.7);
     padding: 20px;
     border-radius: 10px;
 }
 
 .reserva-info h2 {
-    font-family: 'Montserrat', sans-serif;
     font-size: 2.5rem;
     margin-bottom: 20px;
 }
@@ -711,7 +611,6 @@ html, body {
     margin-bottom: 20px;
 }
 
-/* Botão "Faça sua Reserva" */
 #abrir-formulario {
     background: #433d3b;
     color: white;
@@ -728,7 +627,6 @@ html, body {
     background: #6A5F5A;
 }
 
-/* Formulário de reserva (inicialmente oculto) */
 #formulario-reserva {
     background: rgba(0, 0, 0, 0.8);
     padding: 20px;
@@ -783,16 +681,17 @@ html, body {
     background: #6A5F5A;
 }
 
-/* Mensagem de feedback */
 .mensagem {
     margin-top: 15px;
     font-size: 0.9rem;
     color: #d9534f;
 }
 
-/* Footer */
+/* ============================================= */
+/* FOOTER */
+/* ============================================= */
 .custom-footer {
-    background: rgba(255, 255, 255, 0.7); 
+    background: rgba(255, 255, 255, 0.7);
     color: #fff;
     padding: 2rem 1rem;
 }
@@ -805,14 +704,16 @@ html, body {
 }
 
 .custom-footer a:hover {
-    color: #DDBEA9; /* Cor suave para o hover */
+    color: #DDBEA9;
 }
 
 .custom-footer i {
-    margin-right: 8px; /* Espaçamento entre o ícone e o texto */
+    margin-right: 8px;
 }
 
-/* Style dos cookies */
+/* ============================================= */
+/* BANNER DE COOKIES */
+/* ============================================= */
 .cookie-banner {
     position: fixed;
     bottom: 0;
@@ -834,28 +735,18 @@ html, body {
     margin-left: 10px;
 }
 
-@media (max-width: 768px) {
-    .cookie-banner {
-        padding: 10px;
-    }
-    .cookie-banner .btn {
-        display: block;
-        width: 100%;
-        margin: 5px 0;
-    }
-}
-
-/* Estilo do mapa */
+/* ============================================= */
+/* MAPA E REDES SOCIAIS */
+/* ============================================= */
 #map {
     width: 100%;
-    height: 300px; /* Garantir altura para o mapa */
-    background: #ccc; /* Cor de fundo para o mapa enquanto não carregado */
-    border-radius: 10px; /* Bordas arredondadas */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    margin-top: 20px; /* Espaço entre o conteúdo e o mapa */
+    height: 300px;
+    background: #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
 }
 
-/* Seção das redes sociais e informações */
 .social-info {
     margin-top: 20px;
     text-align: center;
@@ -873,14 +764,16 @@ html, body {
 }
 
 .social-info a:hover {
-    color: #DDBEA9; /* Cor suave para o hover */
+    color: #DDBEA9;
 }
 
 .social-info i {
-    margin-right: 8px; /* Espaçamento entre o ícone e o texto */
+    margin-right: 8px;
 }
 
-/* Responsividade */
+/* ============================================= */
+/* RESPONSIVIDADE */
+/* ============================================= */
 @media (max-width: 1200px) {
     .historia-content {
         flex-direction: column;
@@ -902,14 +795,6 @@ html, body {
 }
 
 @media (max-width: 768px) {
-    .custom-header-title {
-        font-size: 3rem;
-    }
-
-    .carousel-caption {
-        top: 60%;
-    }
-
     .historia-section {
         padding: 40px 0;
     }
@@ -930,6 +815,30 @@ html, body {
     .reserva-info h2 {
         font-size: 2rem;
     }
+
+    .cookie-banner {
+        padding: 10px;
+    }
+    
+    .cookie-banner .btn {
+        display: block;
+        width: 100%;
+        margin: 5px 0;
+    }
 }
 
-/*Estilos para as paginas dos links*/
+@media (max-width: 576px) {
+    .reserva-section {
+        height: auto;
+        min-height: 100vh;
+    }
+    
+    .reserva-info h2 {
+        font-size: 1.8rem;
+    }
+    
+    .reserva-info p {
+        font-size: 1rem;
+    }
+}
+
