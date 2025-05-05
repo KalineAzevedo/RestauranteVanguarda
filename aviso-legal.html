@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aviso Legal - Restaurante Vanguarda</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style-novaspaginas.css">
+</head>
+<body>
+<div class="nova-pagina">
+    <!-- Mesma navbar das outras páginas -->
+    <nav class="navbar navbar-expand-lg custom-navbar fixed-top">
+        <div class="container">
+            <div class="language-selector me-3">
+                <span id="pt" class="language active" onclick="changeLanguage('pt')">
+                    <img src="img/bandeira_pt.gif" alt="PT">
+                </span>
+                <span id="en" class="language" onclick="changeLanguage('en')">
+                    <img src="img/bandeira_en.jpg" alt="EN">
+                </span>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a id="nav-home" class="nav-link" href="index.html">Início</a></li>
+                    <li class="nav-item"><a id="nav-especialidades" class="nav-link" href="especialidades.html">Especialidades</a></li>
+                    <li class="nav-item"><a id="nav-menu" class="nav-link" href="menu.html">Menu</a></li>
+                    <li class="nav-item"><a id="nav-menu-grupos" class="nav-link" href="menuparagrupos.html">Menu para Grupos</a></li>
+                    <li class="nav-item"><a id="nav-reservas" class="nav-link" href="reservas.html">Reservas</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="d-flex align-items-center politicas-header text-white">
+        <div class="container text-center">
+            <h1>Aviso Legal</h1>
+        </div>
+    </header>
+
+    <section class="container py-5">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="mb-4">1. Identificação</h2>
+                <p>Nome: Restaurante Vanguarda, Lda.<br>
+                Morada: Rua da Alegria, 123, Porto, Portugal<br>
+                NIF: 999 999 999<br>
+                Email: contacto@vanguarda.com</p>
+                
+                <h2 class="mb-4">2. Propriedade Intelectual</h2>
+                <p>Todos os conteúdos deste site (textos, imagens, logotipos, design) são propriedade do Restaurante Vanguarda ou de terceiros que autorizaram o seu uso, estando protegidos por leis de propriedade intelectual.</p>
+                
+                <h2 class="mb-4">3. Responsabilidade</h2>
+                <p>O Restaurante Vanguarda não se responsabiliza por:</p>
+                <ul>
+                    <li>Erros ou omissões nos conteúdos do site</li>
+                    <li>Danos resultantes do uso deste site</li>
+                    <li>Conteúdos de sites externos com links no nosso site</li>
+                </ul>
+                
+                <h2 class="mb-4">4. Reservas e Pagamentos</h2>
+                <p>As reservas estão sujeitas a disponibilidade. O restaurante reserva-se o direito de cancelar reservas em caso de força maior ou erro evidente nos preços.</p>
+                
+                <h2 class="mb-4">5. Legislação Aplicável</h2>
+                <p>Este site e a sua utilização estão sujeitos à legislação portuguesa. Qualquer litígio será resolvido nos tribunais da comarca do Porto.</p>
+                
+                <h2 class="mb-4">6. Alterações</h2>
+                <p>Este aviso legal pode ser alterado a qualquer momento. A versão atualizada estará sempre disponível no site.</p>
+                
+                <p class="mt-5"><small>Última atualização: 01/01/2023</small></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer padrão -->
+    <footer id="contato" class="bg-dark text-white py-4 custom-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5>Contatos</h5>
+                    <address>
+                        <p><i class="fas fa-map-marker-alt me-2"></i> Rua da Alegria, 123 - Porto, Portugal</p>
+                        <p><i class="fas fa-phone me-2"></i> 999 999 999</p>
+                        <p><i class="fas fa-envelope me-2"></i> contacto@vanguarda.com</p>
+                    </address>
+                </div>
+
+                <div class="col-md-4">
+                    <h5>Informações Legais</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="politica-privacidade.html" class="text-white"><i class="fas fa-user-shield me-2"></i> Política de Privacidade</a></li>
+                        <li><a href="aviso-legal.html" class="text-white"><i class="fas fa-balance-scale me-2"></i> Aviso Legal</a></li>
+                        <li><a href="politica-cookies.html" class="text-white"><i class="fas fa-cookie me-2"></i> Política de Cookies</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="row mt-4">
+                <div class="col-12 text-center">
+                    <div class="social-icons mb-3">
+                        <a href="#" class="text-white mx-2" aria-label="Instagram"><i class="fab fa-instagram fa-lg"></i></a>
+                        <a href="#" class="text-white mx-2" aria-label="Facebook"><i class="fab fa-facebook fa-lg"></i></a>
+                        <a href="https://wa.me/11234567890" class="text-white mx-2" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp fa-lg"></i></a>
+                    </div>
+                    <p class="small mb-0">
+                        © <span id="current-year"></span> Restaurante Vanguarda. Todos os direitos reservados.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/lang.js"></script>
+<script>
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

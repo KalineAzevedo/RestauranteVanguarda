@@ -63,7 +63,7 @@ function initCarousel() {
  * - Integra com EmailJS para envio
  */
 
-function setMinDate() {
+/*function setMinDate() {
     const dataInput = document.getElementById('data-reserva');
     if (!dataInput) return;
     
@@ -162,7 +162,7 @@ function sendReservation(data) {
             console.error('Erro ao enviar reserva:', error);
             showError('Erro ao enviar reserva. Tente novamente.');
         });
-}
+}*/
 
 // ==================== COOKIES ====================
 /**
