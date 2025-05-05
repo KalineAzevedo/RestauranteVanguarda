@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurante Vanguarda - Especialidades</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="/css/style-novaspaginas.css">
+</head>
+<body>
+<!-- Barra de navegação principal -->
+<div class="nova-pagina">
+<nav class="navbar navbar-expand-lg custom-navbar fixed-top">
+    <div class="container">
+        <div class="language-selector me-3">
+            <span id="pt" class="language active" onclick="changeLanguage('pt')">
+                <img src="/img/bandeira_pt.gif" alt="PT">
+            </span>
+            <span id="en" class="language" onclick="changeLanguage('en')">
+                <img src="/img/bandeira_en.jpg" alt="EN">
+            </span>
+        </div>
+    <!-- Botão Hamburger (visível apenas em telas pequenas) -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+    </button>
+            
+    <!-- Links -->
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item"><a id="nav-home" class="nav-link" href="/index.html">Início</a></li>
+            <li class="nav-item"><a id="nav-especialidades" class="nav-link" href="/pages/especialidades.html">Especialidades</a></li>
+            <li class="nav-item"><a id="nav-menu" class="nav-link" href="/pages/menu.html">Menu</a></li>
+            <li class="nav-item"><a id="nav-menu-grupos" class="nav-link" href="/pages/menu-para-grupos.html">Menu para Grupos</a></li>
+            <li class="nav-item"><a id="nav-reservas" class="nav-link" href="/pages/reservas.html">Reservas</a></li>
+        </ul>
+    </div>
+    </div>
+</nav>
+    <!--Seção com imagem e texto-->
+    <header class="d-flex align-items-center especialidades-header text-white">
+        <div class="container text-center">
+            <h1 id="especialidades-titulo">Nossas Especialidades</h1>
+            <p class="lead" id="especialidades-subtitulo-header">Tradição portuguesa com toque gourmet</p>
+        </div>
+    </header>
+
+    <section class="container py-5">
+        <div class="row">
+            <div class="col-lg-6 mb-5 mb-lg-0">
+                <div class="especialidades-texto">
+                    <h2 id="especialidades-subtitulo">Cozinha Portuguesa Reinventada</h2>
+                    <p id="especialidades-texto1">No Restaurante Vanguarda, honramos as raízes da gastronomia portuguesa enquanto exploramos novas fronteiras de sabor e apresentação. Nossas especialidades são fruto de uma cuidadosa reinterpretação dos clássicos, onde técnica contemporânea encontra ingredientes excepcionais.</p>                 
+                    <p id="especialidades-texto2">Cada prato em nosso menu de especialidades conta uma história - da origem dos ingredientes à técnica aplicada, da tradição à inovação. Trabalhamos exclusivamente com produtores locais, garantindo não apenas qualidade superior, mas também o apoio à comunidade que nos inspira.</p>
+                    <h3 id="francesinha-titulo">Francesinha Vanguarda</h3>
+                    <p id="francesinha-desc">Nossa assinatura gourmet do clássico portuense. Camadas de pão artesanal, linguiça de caça, presunto ibérico e bife de wagyu, cobertos por queijos especiais e um molho secreto envelhecido 48 horas com especiarias raras e cerveja stout. Finalizada com um toque de folha de ouro - uma ode luxuosa à tradição.</p>
+                    <h3 id="bacalhau-titulo">Bacalhau à Brás Gourmet</h3>
+                    <p id="bacalhau-desc">Desconstruímos o tradicional para criar poesia gastronômica. Lasquinhas de bacalhau negro norueguês, batata-doce cristalizada em azeite aromatizado, ovos orgânicos cremosos e crocantes de alho negro. Coroado com caviar de azeitona e espuma de azeite trufado - onde a memória afetiva encontra a vanguarda.</p>
+                    <h3 id="polvo-titulo">Polvo do Lagar</h3>
+                    <p id="polvo-desc">Tentáculos confitados por 6 horas em azeite do Alentejo, acompanhados por um purê de grão-de-bico com tahine e limão-siciliano. Sobre um leito de espuma de batata-doce, finalizado com redução de vinagre balsâmico envelhecido e pétalas de flor de sal - o Mediterrâneo reinventado.</p><br>
+                    <h3 id="leitao-titulo">Leitão da Moleza</h3>
+                    <p id="leitao-desc">A perfeição da textura: carré de leitão assado lentamente por 12 horas com ervas frescas e redução de vinho do Porto vintage. Servido com perlas de pêra-rocha caramelizada e purê de maçã reineta com canela. A crocância dourada esconde uma carne que se desfaz - a alquimia entre técnica e tradição.</p>
+                    <p id="citacao-chef">"Cada prato é um capítulo da nossa história portuguesa, escrito com os ingredientes da terra e a caligrafia da inovação."</p>
+                    
+                    <p class="chef-signature" id="assinatura-chef">— Chef Kaline Azevedo</p>
+                </div>
+            </div>
+            <!--Imagens e textos das especialidades-->
+            <div class="col-lg-6">
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <div class="card especialidade-card">
+                            <img src="/img/francesinha.jpg" class="card-img-top" alt="Francesinha">
+                            <div class="card-body">
+                                <h5 id="card-francesinha-titulo">Francesinha Vanguarda</h5>
+                                <p id="card-francesinha-desc">Versão premiada do clássico portuense</p>
+                                <span class="price">€59.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 mb-4">
+                        <div class="card especialidade-card">
+                            <img src="/img/bacalhau.jpg" class="card-img-top" alt="Bacalhau">
+                            <div class="card-body">
+                                <h5 id="card-bacalhau-titulo">Bacalhau à Brás Gourmet</h5>
+                                <p id="card-bacalhau-desc">Com batata-doce e azeite trufado</p>
+                                <span class="price">€89.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 mb-4">
+                        <div class="card especialidade-card">
+                            <img src="/img/polvo.jpg" class="card-img-top" alt="Polvo">
+                            <div class="card-body">
+                                <h5 id="card-polvo-titulo">Polvo do Lagar</h5>
+                                <p id="card-polvo-desc">Confitado com purê de grão-de-bico</p>
+                                <span class="price">€99.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 mb-4">
+                        <div class="card especialidade-card">
+                            <img src="/img/leitao.jpg" class="card-img-top" alt="Leitão">
+                            <div class="card-body">
+                                <h5 id="card-leitao-titulo">Leitão da Moleza</h5>
+                                <p id="card-leitao-desc">Assado lentamente com vinho do Porto</p>
+                                <span class="price">€99.00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Footer-->
+<footer id="contato" class="bg-dark text-white py-4 custom-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mb-4 mb-md-0">
+                <h5>Contatos</h5>
+                <address>
+                    <p><i class="fas fa-map-marker-alt me-2"></i> Rua da Alegria, 123 - Porto, Portugal</p>
+                    <p><i class="fas fa-phone me-2"></i> 999 999 999</p>
+                    <p><i class="fas fa-envelope me-2"></i> contacto@vanguarda.com</p>
+                </address>
+            </div>
+
+            <!-- Links legais -->
+            <div class="col-md-4">
+                <h5>Informações Legais</h5>
+                <ul class="list-unstyled">
+                    <li><a href="/legal/politica-privacidade.html" class="text-white"><i class="fas fa-user-shield me-2"></i> Política de Privacidade</a></li>
+                    <li><a href="/legal/aviso-legal.html" class="text-white"><i class="fas fa-balance-scale me-2"></i> Aviso Legal</a></li>
+                    <li><a href="/legal/politica-cookies.html" class="text-white"><i class="fas fa-cookie me-2"></i> Política de Cookies</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Redes sociais e copyright -->
+        <div class="row mt-4">
+            <div class="col-12 text-center">
+                <div class="social-icons mb-3">
+                    <a href="#" class="text-white mx-2" aria-label="Instagram"><i class="fab fa-instagram fa-lg"></i></a>
+                    <a href="#" class="text-white mx-2" aria-label="Facebook"><i class="fab fa-facebook fa-lg"></i></a>
+                    <a href="https://wa.me/11234567890" class="text-white mx-2" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp fa-lg"></i></a>
+                </div>
+                <p class="small mb-0">
+                    © <span id="current-year"></span> Restaurante Vanguarda. Todos os direitos reservados.
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Banner de Cookies -->
+<div id="cookieConsent" class="cookie-banner d-none">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-8 mb-3 mb-md-0">
+                <p class="mb-0">Utilizamos cookies para melhorar sua experiência. Ao continuar navegando, você concorda com nossa <a href="/legal/politica-cookies.html" class="text-light">Política de Cookies</a>.</p>
+            </div>
+            <div class="col-md-4 text-md-end">
+                <button id="acceptCookies" class="btn btn-sm btn-primary">Aceitar</button>
+                <button id="rejectCookies" class="btn btn-sm btn-outline-light">Recusar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+<!--Scripts JS-->
+<script src="/js/lang.js"></script> 
+<script src="/js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurante Vanguarda - Menu para Grupos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="/css/style-novaspaginas.css">
+</head>
+<body>
+<div class="nova-pagina">
+<!-- Barra de navegação principal -->
+<nav class="navbar navbar-expand-lg custom-navbar fixed-top">
+    <div class="container">
+        <div class="language-selector me-3">
+            <span id="pt" class="language active" onclick="changeLanguage('pt')">
+                <img src="/img/bandeira_pt.gif" alt="PT">
+            </span>
+            <span id="en" class="language" onclick="changeLanguage('en')">
+                <img src="/img/bandeira_en.jpg" alt="EN">
+            </span>
+        </div>
+    <!-- Botão para menu mobile -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+    </button>
+            
+    <!-- Links -->
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item"><a id="nav-home" class="nav-link" href="/index.html">Início</a></li>
+            <li class="nav-item"><a id="nav-especialidades" class="nav-link" href="/pages/especialidades.html">Especialidades</a></li>
+            <li class="nav-item"><a id="nav-menu" class="nav-link" href="/pages/menu.html">Menu</a></li>
+            <li class="nav-item"><a id="nav-menu-grupos" class="nav-link" href="/pages/menu-para-grupos.html">Menu para Grupos</a></li>
+            <li class="nav-item"><a id="nav-reservas" class="nav-link" href="/pages/reservas.html">Reservas</a></li>
+        </ul>
+    </div>
+    </div>
+</nav>
+<!--Seção com imagem e texto-->
+<header class="d-flex align-items-center grupos-header text-white">
+    <div class="container text-center">
+        <h1 id="grupos-titulo">MENU PARA GRUPOS</h1>
+        <p class="lead" id="grupos-subtitulo">Celebre seus momentos especiais conosco</p>
+    </div>
+</header>
+
+<section class="container py-5">
+    <div class="section-header">
+        <p id="grupos-descricao">Oferecemos menus especiais para grupos a partir de 8 pessoas, perfeitos para celebrações, jantares de empresa ou encontros familiares.</p>
+    </div>
+    
+    <div class="row">
+        <!-- Menu Tradicional -->
+        <div class="col-md-6">
+            <div class="menu-card p-4">
+                <h2 class="menu-title" id="menu-tradicional-titulo">MENU TRADICIONAL</h2>
+                
+                <div class="dish-item">
+                    <h3 class="dish-name" id="entradas-tradicional-titulo">ENTRADAS</h3>
+                    <p class="dish-ingredients" id="entradas-tradicional-desc">Seleção de petiscos tradicionais</p>
+                </div>
+                
+                <div class="dish-item">
+                    <h3 class="dish-name" id="prato-tradicional-titulo">PRATO PRINCIPAL</h3>
+                    <p class="dish-ingredients" id="carne-tradicional-desc">Carne: Leitão assado com batatas rústicas</p>
+                    <p class="dish-ingredients" id="peixe-tradicional-desc">Peixe: Bacalhau à Brás gourmet</p>
+                </div>
+                
+                <div class="dish-item">
+                    <h3 class="dish-name" id="sobremesa-tradicional-titulo">SOBREMESA</h3>
+                    <p class="dish-ingredients" id="sobremesa-tradicional-desc">Doce da casa: Pudim Abade de Priscos</p>
+                </div>
+                
+                <div class="dish-item">
+                    <h3 class="dish-name" id="bebidas-tradicional-titulo">BEBIDAS</h3>
+                    <p class="dish-ingredients" id="bebidas-tradicional-desc">Vinho da casa, água mineral e café</p>
+                </div>
+                
+                <div class="price-and-button">
+                    <div class="price-tag" id="preco-tradicional">€75 / pessoa</div>
+                    <a href="reservas.html" class="btn btn-dark reserve-btn" id="reservar-tradicional">RESERVAR</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Menu Premium -->
+        <div class="col-md-6">
+            <div class="menu-card p-4">
+                <h2 class="menu-title" id="menu-premium-titulo">MENU PREMIUM</h2>
+                
+                <div class="dish-item">
+                    <h3 class="dish-name" id="entradas-premium-titulo">ENTRADAS</h3>
+                    <p class="dish-ingredients" id="entradas-premium-desc">Seleção de petiscos gourmet</p>
+                </div>
+                
+                <div class="dish-item">
+                    <h3 class="dish-name" id="prato-premium-titulo">PRATO PRINCIPAL</h3>
+                    <p class="dish-ingredients" id="carne-premium-desc">Carne: Wagyu com purê de batata-doce</p>
+                    <p class="dish-ingredients" id="peixe-premium-desc">Peixe: Polvo confitado com grão-de-bico</p>
+                </div>
+                
+                <div class="dish-item">
+                    <h3 class="dish-name" id="sobremesa-premium-titulo">SOBREMESA</h3>
+                    <p class="dish-ingredients" id="sobremesa-premium-desc">Doce da casa: Mousse de chocolate com ouro comestível</p>
+                </div>
+                
+                <div class="dish-item">
+                    <h3 class="dish-name" id="bebidas-premium-titulo">BEBIDAS</h3>
+                    <p class="dish-ingredients" id="bebidas-premium-desc">Vinho premium, água mineral e café especial</p>
+                </div>
+                
+                <div class="price-and-button">
+                    <div class="price-tag" id="preco-premium">€99 / pessoa</div>
+                    <a href="reservas.html" class="btn btn-dark reserve-btn" id="reservar-premium">RESERVAR</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Footer-->
+<footer id="contato" class="bg-dark text-white py-4 custom-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mb-4 mb-md-0">
+                <h5>Contatos</h5>
+                <address>
+                    <p><i class="fas fa-map-marker-alt me-2"></i> Rua da Alegria, 123 - Porto, Portugal</p>
+                    <p><i class="fas fa-phone me-2"></i> 999 999 999</p>
+                    <p><i class="fas fa-envelope me-2"></i> contacto@vanguarda.com</p>
+                </address>
+            </div>
+
+            <!-- Links legais -->
+            <div class="col-md-4">
+                <h5>Informações Legais</h5>
+                <ul class="list-unstyled">
+                    <li><a href="/legal/politica-privacidade.html" class="text-white"><i class="fas fa-user-shield me-2"></i> Política de Privacidade</a></li>
+                    <li><a href="/legal/aviso-legal.html" class="text-white"><i class="fas fa-balance-scale me-2"></i> Aviso Legal</a></li>
+                    <li><a href="/legal/politica-cookies.html" class="text-white"><i class="fas fa-cookie me-2"></i> Política de Cookies</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Redes sociais e copyright -->
+        <div class="row mt-4">
+            <div class="col-12 text-center">
+                <div class="social-icons mb-3">
+                    <a href="#" class="text-white mx-2" aria-label="Instagram"><i class="fab fa-instagram fa-lg"></i></a>
+                    <a href="#" class="text-white mx-2" aria-label="Facebook"><i class="fab fa-facebook fa-lg"></i></a>
+                    <a href="https://wa.me/11234567890" class="text-white mx-2" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp fa-lg"></i></a>
+                </div>
+                <p class="small mb-0">
+                    © <span id="current-year"></span> Restaurante Vanguarda. Todos os direitos reservados.
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Banner de Cookies -->
+<div id="cookieConsent" class="cookie-banner d-none">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-8 mb-3 mb-md-0">
+                <p class="mb-0">Utilizamos cookies para melhorar sua experiência. Ao continuar navegando, você concorda com nossa <a href="/legal/politica-cookies.html" class="text-light">Política de Cookies</a>.</p>
+            </div>
+            <div class="col-md-4 text-md-end">
+                <button id="acceptCookies" class="btn btn-sm btn-primary">Aceitar</button>
+                <button id="rejectCookies" class="btn btn-sm btn-outline-light">Recusar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+<!--Javascript da pagina-->
+<script src="/js/lang.js"></script>
+<script src="/js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

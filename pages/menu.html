@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurante Vanguarda - Menu</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="/css/style-novaspaginas.css">
+</head>
+<body>
+<!-- Barra de navegação principal -->
+<div class="nova-pagina">
+<nav class="navbar navbar-expand-lg custom-navbar fixed-top">
+    <div class="container">
+        <div class="language-selector me-3">
+            <span id="pt" class="language active" onclick="changeLanguage('pt')">
+                <img src="/img/bandeira_pt.gif" alt="PT">
+            </span>
+            <span id="en" class="language" onclick="changeLanguage('en')">
+                <img src="/img/bandeira_en.jpg" alt="EN">
+            </span>
+        </div>
+        <!-- Botão para menu mobile -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Links -->
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a id="nav-home" class="nav-link" href="/index.html">Início</a></li>
+                <li class="nav-item"><a id="nav-especialidades" class="nav-link" href="/pages/especialidades.html">Especialidades</a></li>
+                <li class="nav-item"><a id="nav-menu" class="nav-link" href="/pages/menu.html">Menu</a></li>
+                <li class="nav-item"><a id="nav-menu-grupos" class="nav-link" href="/pages/menu-para-grupos.html">Menu para Grupos</a></li>
+                <li class="nav-item"><a id="nav-reservas" class="nav-link" href="/pages/reservas.html">Reservas</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!--Seção com imagem e texto-->
+<header class="d-flex align-items-center menu-header text-white">
+    <div class="container text-center">
+        <h1 id="menu-titulo">MENU PRINCIPAL</h1>
+        <p class="lead" id="menu-subtitulo">Sabores autênticos preparados com ingredientes locais</p>
+    </div>
+</header>
+
+<section class="container py-5">
+    <div class="section-header">
+        <p id="menu-descricao">Explore nossa seleção de pratos tradicionais reinventados</p>
+    </div>
+    
+    <div class="row">
+        <!-- Entradas Gourmet -->
+        <div class="col-md-6">
+            <div class="menu-card p-4">
+                <h2 class="menu-title" id="entradas-titulo">ENTRADAS GOURMET</h2>
+                
+                <div class="dish-item">
+                    <h3 class="dish-name" id="entrada1-nome">Tartar de Atum com Abacate</h3>
+                    <p class="dish-ingredients" id="entrada1-desc">Atum fresco marinado, abacate Hass, gengibre e molho de soja trufado</p>
+                    <div class="price-tag" id="preco-entrada1">€49.00</div>
+                </div>
+                
+                <div class="dish-item">
+                    <h3 class="dish-name" id="entrada2-nome">Foie Gras com Geleia de Porto</h3>
+                    <p class="dish-ingredients" id="entrada2-desc">Foie gras selado, geleia de vinho do Porto e pão brioche tostado</p>
+                    <div class="price-tag" id="preco-entrada2">€59.00</div>
+                </div>
+                
+                <div class="dish-item">
+                    <h3 class="dish-name" id="entrada3-nome">Carpaccio de Wagyu</h3>
+                    <p class="dish-ingredients" id="entrada3-desc">Finas fatias de wagyu A5, rúcula, queijo parmesão e azeite trufado</p>
+                    <div class="price-tag" id="preco-entrada3">€69.00</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Pratos Principais Gourmet -->
+        <div class="col-md-6">
+            <div class="menu-card p-4">
+                <h2 class="menu-title" id="pratos-titulo">PRATOS SIGNATURE</h2>
+                
+                <div class="dish-item">
+                    <h3 class="dish-name" id="prato1-nome">Risoto d9e Lagostim e Açafrão</h3>
+                    <p class="dish-ingredients" id="prato1-desc">Arroz carnaroli, lagostins frescos, açafrão da Mancha e redução de marisco</p>
+                    <div class="price-tag" id="preco-prato1">€89.00</div>
+                </div>
+                
+                <div class="dish-item">
+                    <h3 class="dish-name" id="prato2-nome">Lombo de Veado com Purê de Castanha</h3>
+                    <p class="dish-ingredients" id="prato2-desc">Lombo de veado selvagem, purê de castanha portuguesa e molho de vinho tinto</p>
+                    <div class="price-tag" id="preco-prato2">€99.00</div>
+                </div>
+                
+                <div class="dish-item">
+                    <h3 class="dish-name" id="prato3-nome">Bacalhau Negro Confitado</h3>
+                    <p class="dish-ingredients" id="prato3-desc">Bacalhau norueguês negro, purê de grão-de-bico trufado e espuma de azeite</p>
+                    <div class="price-tag" id="preco-prato3">€109.00</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <!-- Sobremesas Gourmet -->
+        <div class="col-md-6">
+            <div class="menu-card p-4">
+                <h2 class="menu-title" id="sobremesas-titulo">SOBREMESAS PREMIUM</h2>
+                
+                <div class="dish-item">
+                    <h3 class="dish-name" id="sobremesa1-nome">Soufflé de Chocolate Belga</h3>
+                    <p class="dish-ingredients" id="sobremesa1-desc">Soufflé quente de chocolate Valrhona com sorvete de baunilha Bourbon</p>
+                    <div class="price-tag" id="preco-sobremesa1">€39.00</div>
+                </div>
+                
+                <div class="dish-item">
+                    <h3 class="dish-name" id="sobremesa2-nome">Tarte Tatin com Foie Gras</h3>
+                    <p class="dish-ingredients" id="sobremesa2-desc">Maçã caramelizada, foie gras torchon e sorvete de canela</p>
+                    <div class="price-tag" id="preco-sobremesa2">€49.00</div>
+                </div>
+                <div class="dish-item">
+                    <h3 class="dish-name" id="sobremesa3-nome">Mille-Feuille de Frutas Vermelhas</h3>
+                    <p class="dish-ingredients" id="sobremesa3-desc">Camadas crocantes de massa folhada, creme patissier e frutas vermelhas silvestres</p>
+                    <div class="price-tag" id="preco-sobremesa3">€59.00</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Vinhos Selecionados -->
+        <div class="col-md-6">
+            <div class="menu-card p-4">
+                <h2 class="menu-title" id="vinhos-titulo">VINHOS SELECIONADOS</h2>
+                
+                <div class="dish-item">
+                    <h3 class="dish-name" id="vinho1-nome">Quinta do Crasto Reserva</h3>
+                    <p class="dish-ingredients" id="vinho1-desc">Douro 2018 - Garrafa</p>
+                    <div class="price-tag" id="preco-vinho1">€145.00</div>
+                </div>
+                
+                <div class="dish-item">
+                    <h3 class="dish-name" id="vinho2-nome">Blandy's Verdelho 10 Anos</h3>
+                    <p class="dish-ingredients" id="vinho2-desc">Madeira - Taça</p>
+                    <div class="price-tag" id="preco-vinho2">€199.00</div>
+                </div>
+                
+                <div class="dish-item">
+                    <h3 class="dish-name" id="vinho3-nome">Champagne Dom Pérignon</h3>
+                    <p class="dish-ingredients" id="vinho3-desc">2012 - Garrafa</p>
+                    <div class="price-tag" id="preco-vinho3">€220.00</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Footer-->
+<footer id="contato" class="bg-dark text-white py-4 custom-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mb-4 mb-md-0">
+                <h5>Contatos</h5>
+                <address>
+                    <p><i class="fas fa-map-marker-alt me-2"></i> Rua da Alegria, 123 - Porto, Portugal</p>
+                    <p><i class="fas fa-phone me-2"></i> 999 999 999</p>
+                    <p><i class="fas fa-envelope me-2"></i> contacto@vanguarda.com</p>
+                </address>
+            </div>            
+            <!-- Links legais -->
+            <div class="col-md-4">
+                <h5>Informações Legais</h5>
+                <ul class="list-unstyled">
+                    <li><a href="/legal/politica-privacidade.html" class="text-white"><i class="fas fa-user-shield me-2"></i> Política de Privacidade</a></li>
+                    <li><a href="/legal/aviso-legal.html" class="text-white"><i class="fas fa-balance-scale me-2"></i> Aviso Legal</a></li>
+                    <li><a href="/legal/politica-cookies.html" class="text-white"><i class="fas fa-cookie me-2"></i> Política de Cookies</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Redes sociais e copyright -->
+        <div class="row mt-4">
+            <div class="col-12 text-center">
+                <div class="social-icons mb-3">
+                    <a href="#" class="text-white mx-2" aria-label="Instagram"><i class="fab fa-instagram fa-lg"></i></a>
+                    <a href="#" class="text-white mx-2" aria-label="Facebook"><i class="fab fa-facebook fa-lg"></i></a>
+                    <a href="https://wa.me/11234567890" class="text-white mx-2" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp fa-lg"></i></a>
+                </div>
+                <p class="small mb-0">
+                    © <span id="current-year"></span> Restaurante Vanguarda. Todos os direitos reservados.
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Banner de Cookies -->
+<div id="cookieConsent" class="cookie-banner d-none">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-8 mb-3 mb-md-0">
+                <p class="mb-0">Utilizamos cookies para melhorar sua experiência. Ao continuar navegando, você concorda com nossa <a href="/legal/politica-cookies.html" class="text-light">Política de Cookies</a>.</p>
+            </div>
+            <div class="col-md-4 text-md-end">
+                <button id="acceptCookies" class="btn btn-sm btn-primary">Aceitar</button>
+                <button id="rejectCookies" class="btn btn-sm btn-outline-light">Recusar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+<!-- Scripts JS-->
+<script src="/js/lang.js"></script>
+<script src="/js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
