@@ -19,6 +19,8 @@ const translations = {
         "cookie-essential-only": "Apenas Necessários",
 
         // ============== PÁGINA INICIAL ==============
+        
+        "reserva-section":"Reservar",
         "reserva-titulo": "Reserve Online",
         "reserva-data": "Escolha uma Data:",
         "reserva-horario": "Horário:",
@@ -169,7 +171,7 @@ const translations = {
         "placeholder-horario": "Selecione um horário",
         "label-pessoas": "Número de Pessoas:",
         "label-contato": "Contato:",
-        "contato-reserva": "Seu telefone ou e-mail",
+        "contato-reserva": "Seu e-mail",
         "label-observacoes": "Observações:",
         "observacoes-reserva": "Restrições alimentares, salivacários etc.",
         "btn-reservar": "Reservar","campos-obrigatorios": "Por favor, preencha todos os campos obrigatórios!",
@@ -196,6 +198,7 @@ const translations = {
         "cookie-essential-only": "Essential Only",
 
         // ============== HOME PAGE ==============
+        "reserva-section":"Book Online",
         "reserva-titulo": "Book Online",
         "reserva-data": "Choose a Date:",
         "reserva-horario": "Time:",
