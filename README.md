@@ -36,10 +36,6 @@ O website apresenta a identidade visual do restaurante, os menus, especialidades
 
 ---
 
-## 📁 Estrutura de Diretórios
-![image](https://github.com/user-attachments/assets/8b55830d-0325-440c-9fb1-d6391c28c037)
-
-
 ## 📊 Resultados
 
 - ⏱️ Tempo de carregamento: **< 3 segundos** (medido via Lighthouse)
